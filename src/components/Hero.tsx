@@ -1,7 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
-import { useState, useEffect, Suspense } from "react";
-import { Beams } from "./Beams";
+import { useState, useEffect } from "react";
 
 const cyclingTexts = [
   "Redesign your website with AI-driven conversion focus",
@@ -33,24 +32,9 @@ export function Hero() {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background">
-      {/* 3D Beams Background */}
-      <div className="absolute inset-0 z-0">
-        <Suspense fallback={null}>
-          <Beams 
-            beamWidth={2}
-            beamHeight={15}
-            beamNumber={12}
-            lightColor="#c0c0c0"
-            speed={2}
-            noiseIntensity={1.75}
-            scale={0.2}
-            rotation={0}
-          />
-        </Suspense>
-      </div>
-
-      {/* Gradient overlay for text readability */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-background/50 to-background z-[1]" />
+      {/* Gradient background */}
+      <div className="absolute inset-0 bg-gradient-to-b from-muted/30 via-background to-background" />
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-muted/40 rounded-full blur-[120px] opacity-40" />
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-5xl mx-auto text-center">
