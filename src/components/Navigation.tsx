@@ -41,11 +41,8 @@ export function Navigation() {
 
           {/* CTA */}
           <div className="hidden md:flex items-center gap-4">
-            <Button variant="ghost" size="sm">
-              See Demo
-            </Button>
             <Button variant="hero" size="default">
-              Book Pilot
+              Book a Call
             </Button>
           </div>
 
@@ -73,11 +70,8 @@ export function Navigation() {
                 </a>
               ))}
               <div className="flex flex-col gap-3 pt-4 border-t border-border/50">
-                <Button variant="outline" size="default" className="w-full">
-                  See Demo
-                </Button>
                 <Button variant="hero" size="default" className="w-full">
-                  Book Pilot
+                  Book a Call
                 </Button>
               </div>
             </div>
