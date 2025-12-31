@@ -1,4 +1,3 @@
-import { Search, Rocket, TrendingUp } from "lucide-react";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { UniqueAccordion } from "@/components/ui/interactive-accordion";
 
@@ -10,7 +9,6 @@ const steps = [
     content: "We capture baseline metrics and access points to understand your current operations and identify the highest-impact opportunities.",
     duration: "3–5 days",
     image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=300&fit=crop",
-    icon: Search,
   },
   {
     id: "pilot",
@@ -19,7 +17,6 @@ const steps = [
     content: "We run a focused pilot on one channel and measure KPIs in real-time. You'll see results before committing to scale.",
     duration: "7–21 days",
     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=300&fit=crop",
-    icon: Rocket,
   },
   {
     id: "scale",
@@ -28,7 +25,6 @@ const steps = [
     content: "We broaden coverage, add automations, harden SLA, and optimize continuously based on performance data.",
     duration: "Ongoing",
     image: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=400&h=300&fit=crop",
-    icon: TrendingUp,
   },
 ];
 

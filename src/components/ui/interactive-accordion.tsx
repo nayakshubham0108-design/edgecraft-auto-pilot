@@ -2,7 +2,6 @@
 
 import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { LucideIcon } from "lucide-react"
 
 interface AccordionItem {
   id: string
@@ -11,7 +10,6 @@ interface AccordionItem {
   content: string
   duration?: string
   image?: string
-  icon?: LucideIcon
 }
 
 interface UniqueAccordionProps {
@@ -81,23 +79,6 @@ export function UniqueAccordion({ items }: UniqueAccordionProps) {
                       {item.number}
                     </span>
                   </div>
-
-                  {/* Icon */}
-                  {item.icon && (
-                    <motion.div
-                      className={`w-10 h-10 rounded-lg flex items-center justify-center transition-colors duration-200 ${
-                        isActive ? "bg-primary/20" : "bg-muted"
-                      }`}
-                      animate={{
-                        scale: isActive ? 1.1 : isHovered ? 1.05 : 1,
-                      }}
-                      transition={{ duration: 0.2 }}
-                    >
-                      <item.icon className={`w-5 h-5 transition-colors duration-200 ${
-                        isActive ? "text-primary" : "text-muted-foreground"
-                      }`} />
-                    </motion.div>
-                  )}
 
                   {/* Title */}
                   <span
