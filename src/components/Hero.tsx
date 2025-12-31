@@ -65,9 +65,9 @@ export function Hero() {
 
           {/* CTA Button */}
           <Button
-            variant="outline"
+            variant="hero"
             size="lg"
-            className="min-w-[220px] border-primary/50 text-foreground hover:bg-primary/10 hover:border-primary group text-base py-6"
+            className="min-w-[220px] group text-base py-6"
           >
             Book discovery call
             <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
