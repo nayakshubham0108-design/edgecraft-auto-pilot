@@ -45,17 +45,53 @@ export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof buttonVariants> {
   asChild?: boolean;
+  shimmer?: boolean;
 }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant, size, asChild = false, ...props }, ref) => {
+  ({ className, variant, size, asChild = false, shimmer = true, children, ...props }, ref) => {
     const Comp = asChild ? Slot : "button";
+    
+    if (shimmer && !asChild) {
+      return (
+        <Comp
+          className={cn(
+            buttonVariants({ variant, size, className }),
+            "group relative z-0 overflow-hidden"
+          )}
+          ref={ref}
+          {...props}
+          style={{
+            "--speed": "3s",
+            "--shimmer-color": "#22c55e",
+          } as React.CSSProperties}
+        >
+          {/* Shimmer spark container */}
+          <div className="absolute inset-0 -z-30 overflow-visible blur-[2px] [container-type:size]">
+            <div className="absolute inset-0 h-[100cqh] animate-shimmer-slide [aspect-ratio:1] [border-radius:0] [mask:none]">
+              <div className="absolute -inset-full w-auto rotate-0 animate-spin-around [background:conic-gradient(from_calc(270deg-(90deg*0.5)),transparent_0,var(--shimmer-color)_90deg,transparent_90deg)] [translate:0_0]" />
+            </div>
+          </div>
+          
+          {children}
+          
+          {/* Highlight overlay */}
+          <div className="pointer-events-none absolute inset-0 rounded-full shadow-[inset_0_-8px_10px_#ffffff1f] transition-all duration-300 group-hover:shadow-[inset_0_-6px_10px_#ffffff3f]" />
+          
+          {/* Backdrop to cover shimmer in center */}
+          <div className="absolute -z-20 rounded-full [background:inherit] [inset:0.05em]" />
+        </Comp>
+      );
+    }
+    
     return (
       <Comp
         className={cn(buttonVariants({ variant, size, className }))}
         ref={ref}
         {...props}
-      />
+      >
+        {children}
+      </Comp>
     );
   }
 );
