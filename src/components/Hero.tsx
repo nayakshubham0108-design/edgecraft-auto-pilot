@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { useState, useEffect } from "react";
-import { EtherealBeamsBackground } from "@/components/ui/ethereal-beams-hero";
+import { HeroShapesBackground } from "@/components/ui/shape-landing-hero";
 
 const cyclingTexts = [
   "Redesign your website with AI-driven conversion focus",
@@ -32,8 +32,8 @@ export function Hero() {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background isolate">
-      {/* Ethereal beams 3D background */}
-      <EtherealBeamsBackground lightColor="#22c55e" speed={2} rotation={0} />
+      {/* Geometric shapes background */}
+      <HeroShapesBackground />
       
       {/* Top gradient background */}
       <div
