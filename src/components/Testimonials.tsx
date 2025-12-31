@@ -55,8 +55,12 @@ export function Testimonials() {
   ];
 
   return (
-    <section className="py-24 lg:py-32 relative">
-      <div className="container mx-auto">
+    <section className="py-24 lg:py-32 relative overflow-hidden">
+      {/* Green aurora background */}
+      <div className="absolute inset-0 bg-aurora-green pointer-events-none" />
+      <div className="absolute bottom-0 right-0 w-[500px] h-[350px] bg-[radial-gradient(ellipse_at_100%_100%,hsla(142,70%,40%,0.2)_0%,transparent_55%)] pointer-events-none" />
+      
+      <div className="container mx-auto relative z-10">
         {/* Section Header */}
         <ScrollReveal>
           <div className="text-center max-w-3xl mx-auto mb-16">

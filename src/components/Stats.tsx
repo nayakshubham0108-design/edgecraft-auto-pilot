@@ -67,8 +67,10 @@ function AnimatedNumber({ value, suffix }: { value: number; suffix: string }) {
 export function Stats() {
   return (
     <section id="results" className="py-24 lg:py-32 relative overflow-hidden">
-      {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-secondary/30 to-background" />
+      {/* Green aurora background gradient */}
+      <div className="absolute inset-0 bg-aurora-full" />
+      <div className="absolute bottom-0 right-0 w-[700px] h-[450px] bg-[radial-gradient(ellipse_at_100%_100%,hsla(142,70%,40%,0.28)_0%,transparent_55%)] pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-[500px] h-[350px] bg-[radial-gradient(ellipse_at_0%_100%,hsla(142,70%,35%,0.18)_0%,transparent_50%)] pointer-events-none" />
       
       <div className="container mx-auto relative z-10">
         {/* Section Header */}

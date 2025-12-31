@@ -31,9 +31,10 @@ export function Hero() {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background">
-      {/* Gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-muted/30 via-background to-background" />
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-muted/40 rounded-full blur-[120px] opacity-40" />
+      {/* Green aurora gradient background */}
+      <div className="absolute inset-0 bg-aurora-green" />
+      <div className="absolute bottom-0 right-0 w-[800px] h-[500px] bg-[radial-gradient(ellipse_at_100%_100%,hsla(142,70%,40%,0.3)_0%,transparent_60%)]" />
+      <div className="absolute top-0 left-1/4 w-[400px] h-[300px] bg-[radial-gradient(ellipse_at_50%_0%,hsla(142,70%,45%,0.1)_0%,transparent_50%)]" />
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-5xl mx-auto text-center">
