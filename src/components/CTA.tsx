@@ -5,11 +5,11 @@ import { ScrollReveal } from "@/components/ScrollReveal";
 export function CTA() {
   return (
     <section className="py-24 lg:py-32 relative overflow-hidden">
-      {/* Background gradient */}
-      <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-gradient-to-t from-primary/10 via-background to-background" />
-        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-primary/20 rounded-full blur-3xl" />
-      </div>
+      {/* Green aurora background gradient */}
+      <div className="absolute inset-0 bg-aurora-green-center" />
+      <div className="absolute bottom-0 right-0 w-[600px] h-[400px] bg-[radial-gradient(ellipse_at_100%_100%,hsla(142,70%,40%,0.3)_0%,transparent_55%)]" />
+      <div className="absolute bottom-0 left-0 w-[400px] h-[300px] bg-[radial-gradient(ellipse_at_0%_100%,hsla(142,70%,35%,0.15)_0%,transparent_45%)]" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[500px] bg-[radial-gradient(ellipse_at_50%_50%,hsla(142,70%,45%,0.08)_0%,transparent_50%)]" />
 
       <div className="container mx-auto relative z-10">
         <ScrollReveal>
