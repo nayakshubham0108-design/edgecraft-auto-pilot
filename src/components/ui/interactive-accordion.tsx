@@ -28,7 +28,23 @@ export function UniqueAccordion({ items }: UniqueAccordionProps) {
           const isLast = index === items.length - 1
 
           return (
-            <div key={item.id} className="relative">
+            <motion.div 
+              key={item.id} 
+              className="relative rounded-xl transition-all duration-300"
+              animate={{
+                boxShadow: isActive 
+                  ? "0 0 30px hsl(var(--primary) / 0.3), 0 0 60px hsl(var(--primary) / 0.1)" 
+                  : isHovered 
+                    ? "0 0 20px hsl(var(--primary) / 0.2), 0 0 40px hsl(var(--primary) / 0.05)" 
+                    : "0 0 0px hsl(var(--primary) / 0)",
+                backgroundColor: isActive 
+                  ? "hsl(var(--primary) / 0.05)" 
+                  : isHovered 
+                    ? "hsl(var(--primary) / 0.02)" 
+                    : "transparent",
+              }}
+              transition={{ duration: 0.3 }}
+            >
               <motion.button
                 onClick={() => setActiveId(isActive ? null : item.id)}
                 onMouseEnter={() => setHoveredId(item.id)}
@@ -36,7 +52,13 @@ export function UniqueAccordion({ items }: UniqueAccordionProps) {
                 className="w-full group relative"
                 initial={false}
               >
-                <div className="flex items-center gap-6 py-6 px-4">
+                <motion.div 
+                  className="flex items-center gap-6 py-6 px-4"
+                  animate={{
+                    x: isHovered && !isActive ? 8 : 0,
+                  }}
+                  transition={{ duration: 0.2, ease: "easeOut" }}
+                >
                   {/* Number with animated circle */}
                   <div className="relative">
                     <motion.div
@@ -93,7 +115,7 @@ export function UniqueAccordion({ items }: UniqueAccordionProps) {
                       </svg>
                     </motion.div>
                   </div>
-                </div>
+                </motion.div>
 
                 {/* Animated underline */}
                 <motion.div
@@ -124,7 +146,7 @@ export function UniqueAccordion({ items }: UniqueAccordionProps) {
                   </motion.div>
                 )}
               </AnimatePresence>
-            </div>
+            </motion.div>
           )
         })}
       </div>
