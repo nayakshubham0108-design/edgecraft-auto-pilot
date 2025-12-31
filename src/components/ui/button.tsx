@@ -10,21 +10,21 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default:
-          "bg-primary text-primary-foreground hover:scale-[1.02] hover:shadow-[0_0_35px_hsla(142,70%,50%,0.5)] active:scale-[0.98]",
+          "bg-primary text-primary-foreground hover:scale-[1.02] hover:shadow-[0_0_40px_hsla(142,70%,50%,0.55)] active:scale-[0.98]",
         destructive:
           "bg-destructive text-destructive-foreground hover:bg-destructive/90 hover:shadow-[0_0_30px_hsla(0,70%,50%,0.4)]",
         outline:
-          "border border-border bg-transparent text-foreground hover:bg-secondary hover:border-[hsla(142,70%,45%,0.4)] hover:shadow-[0_0_25px_hsla(142,70%,45%,0.3)]",
+          "border border-[hsla(142,70%,50%,0.3)] bg-transparent text-foreground hover:bg-[hsla(142,70%,50%,0.1)] hover:border-[hsla(142,70%,50%,0.5)] hover:shadow-[0_0_30px_hsla(142,70%,50%,0.35)]",
         secondary:
-          "bg-secondary text-secondary-foreground hover:bg-secondary/80 hover:shadow-[0_0_20px_hsla(142,70%,45%,0.2)]",
+          "bg-secondary text-secondary-foreground hover:bg-[hsla(142,70%,45%,0.15)] hover:shadow-[0_0_25px_hsla(142,70%,50%,0.25)]",
         ghost:
-          "text-foreground hover:bg-secondary hover:text-foreground hover:shadow-[0_0_20px_hsla(142,70%,45%,0.15)]",
+          "text-foreground hover:bg-[hsla(142,70%,50%,0.1)] hover:text-primary hover:shadow-[0_0_20px_hsla(142,70%,50%,0.2)]",
         link:
           "text-primary underline-offset-4 hover:underline",
         hero:
-          "bg-accent text-accent-foreground font-bold shadow-[0_0_25px_hsla(142,70%,45%,0.4)] hover:scale-[1.03] hover:shadow-[0_0_50px_hsla(142,70%,50%,0.6)] active:scale-[0.98]",
+          "bg-[linear-gradient(135deg,hsl(142,70%,45%)_0%,hsl(142,80%,35%)_100%)] text-white font-bold shadow-[0_0_35px_hsla(142,70%,50%,0.5)] hover:scale-[1.03] hover:shadow-[0_0_60px_hsla(142,70%,55%,0.7)] active:scale-[0.98]",
         glass:
-          "bg-[linear-gradient(180deg,hsla(0,0%,100%,0.04)_0%,hsla(0,0%,100%,0.01)_100%)] border border-[hsla(0,0%,100%,0.1)] backdrop-blur-xl text-foreground hover:bg-secondary/50 hover:border-[hsla(142,70%,45%,0.4)] hover:shadow-[0_0_30px_hsla(142,70%,45%,0.3)]",
+          "bg-[linear-gradient(180deg,hsla(142,60%,50%,0.06)_0%,hsla(142,50%,40%,0.02)_100%)] border border-[hsla(142,70%,50%,0.2)] backdrop-blur-xl text-foreground hover:bg-[hsla(142,70%,50%,0.12)] hover:border-[hsla(142,70%,50%,0.45)] hover:shadow-[0_0_35px_hsla(142,70%,50%,0.35)]",
       },
       size: {
         default: "h-11 px-6 py-2",
