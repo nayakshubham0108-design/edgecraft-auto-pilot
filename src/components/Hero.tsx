@@ -1,7 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { useState, useEffect } from "react";
-import { EtherealBeamsBackground } from "@/components/ui/ethereal-beams-hero";
 
 const cyclingTexts = [
   "Redesign your website with AI-driven conversion focus",
@@ -32,9 +31,6 @@ export function Hero() {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background isolate">
-      {/* Ethereal beams 3D background */}
-      <EtherealBeamsBackground lightColor="#22c55e" speed={2} rotation={0} />
-      
       {/* Top gradient background */}
       <div
         aria-hidden="true"
@@ -44,9 +40,8 @@ export function Hero() {
           style={{
             clipPath:
               'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',
-            background: 'linear-gradient(to top right, hsla(142, 70%, 45%, 0.4), hsla(142, 70%, 30%, 0.3))',
           }}
-          className="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
+          className="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-primary/40 to-primary/20 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
         />
       </div>
 
@@ -59,17 +54,16 @@ export function Hero() {
           style={{
             clipPath:
               'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',
-            background: 'linear-gradient(to top right, hsla(142, 70%, 35%, 0.35), hsla(142, 70%, 50%, 0.25))',
           }}
-          className="relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]"
+          className="relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-primary/30 to-accent/25 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]"
         />
       </div>
 
-      <div className="container mx-auto px-6 lg:px-8 relative z-10">
+      <div className="container mx-auto px-6 lg:px-8 relative z-10 py-32 sm:py-48 lg:py-56">
         <div className="mx-auto max-w-3xl text-center">
           {/* Announcement banner */}
           <div className="mb-8 flex justify-center">
-            <div className="relative rounded-full px-4 py-1.5 text-sm/6 text-muted-foreground ring-1 ring-border/30 hover:ring-border/50 transition-colors backdrop-blur-sm">
+            <div className="relative rounded-full px-4 py-1.5 text-sm/6 text-muted-foreground ring-1 ring-border/30 hover:ring-border/50 transition-colors">
               <span className="text-primary font-medium">EdgeCrafts</span>
               {' '}— AI-powered business growth{' '}
               <a href="#features" className="font-semibold text-primary hover:text-primary/80">
