@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { useState, useEffect } from "react";
+import { HeroShapesBackground } from "@/components/ui/shape-landing-hero";
 
 const cyclingTexts = [
   "Redesign your website with AI-driven conversion focus",
@@ -35,6 +36,9 @@ export function Hero() {
       <div className="absolute inset-0 bg-aurora-green" />
       <div className="absolute bottom-0 right-0 w-[800px] h-[500px] bg-[radial-gradient(ellipse_at_100%_100%,hsla(142,70%,40%,0.3)_0%,transparent_60%)]" />
       <div className="absolute top-0 left-1/4 w-[400px] h-[300px] bg-[radial-gradient(ellipse_at_50%_0%,hsla(142,70%,45%,0.1)_0%,transparent_50%)]" />
+      
+      {/* Animated geometric shapes */}
+      <HeroShapesBackground />
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-5xl mx-auto text-center">
