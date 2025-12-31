@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { useState, useEffect } from "react";
-import { HeroShapesBackground } from "@/components/ui/shape-landing-hero";
+import { EtherealBeamsBackground } from "@/components/ui/ethereal-beams-hero";
 
 const cyclingTexts = [
   "Redesign your website with AI-driven conversion focus",
@@ -32,13 +32,13 @@ export function Hero() {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background">
-      {/* Green aurora gradient background */}
-      <div className="absolute inset-0 bg-aurora-green" />
-      <div className="absolute bottom-0 right-0 w-[800px] h-[500px] bg-[radial-gradient(ellipse_at_100%_100%,hsla(142,70%,40%,0.3)_0%,transparent_60%)]" />
-      <div className="absolute top-0 left-1/4 w-[400px] h-[300px] bg-[radial-gradient(ellipse_at_50%_0%,hsla(142,70%,45%,0.1)_0%,transparent_50%)]" />
+      {/* Ethereal beams 3D background */}
+      <EtherealBeamsBackground lightColor="#22c55e" speed={2} rotation={0} />
       
-      {/* Animated geometric shapes */}
-      <HeroShapesBackground />
+      {/* Green aurora gradient overlay */}
+      <div className="absolute inset-0 bg-aurora-green pointer-events-none" />
+      <div className="absolute bottom-0 right-0 w-[800px] h-[500px] bg-[radial-gradient(ellipse_at_100%_100%,hsla(142,70%,40%,0.3)_0%,transparent_60%)] pointer-events-none" />
+      <div className="absolute top-0 left-1/4 w-[400px] h-[300px] bg-[radial-gradient(ellipse_at_50%_0%,hsla(142,70%,45%,0.1)_0%,transparent_50%)] pointer-events-none" />
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-5xl mx-auto text-center">
