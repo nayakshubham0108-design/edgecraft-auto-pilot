@@ -1,6 +1,7 @@
 import { Search, Rocket, TrendingUp } from "lucide-react";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import TiltedCard from "@/components/ui/tilted-card";
+import AnimatedCardStack from "@/components/ui/animated-card-stack";
 
 const steps = [
   {
@@ -44,45 +45,50 @@ export function HowItWorks() {
           </div>
         </ScrollReveal>
 
-        {/* Steps */}
-        <div className="grid md:grid-cols-3 gap-8 lg:gap-12">
-          {steps.map((step, index) => (
-            <ScrollReveal key={step.title} delay={index * 150} direction="up">
-              <div className="relative group">
-                {/* Connector line */}
-                {index < steps.length - 1 && (
-                  <div className="hidden md:block absolute top-16 left-full w-full h-px bg-gradient-to-r from-primary/50 to-transparent -translate-x-1/2 z-0" />
-                )}
+        {/* Two Column Layout */}
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          {/* Left: Steps */}
+          <div className="grid gap-8">
+            {steps.map((step, index) => (
+              <ScrollReveal key={step.title} delay={index * 150} direction="up">
+                <div className="relative group">
+                  <TiltedCard>
+                    <div className="glass-card rounded-2xl p-6 hover:border-primary/30 transition-all duration-300 relative z-10 h-full">
+                      {/* Number + Icon */}
+                      <div className="flex items-center justify-between mb-4">
+                        <span className="font-extrabold text-4xl text-primary/20 group-hover:text-primary/40 transition-colors">
+                          {step.number}
+                        </span>
+                        <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                          <step.icon className="w-6 h-6 text-primary" />
+                        </div>
+                      </div>
 
-                <TiltedCard>
-                  <div className="glass-card rounded-2xl p-8 hover:border-primary/30 transition-all duration-300 relative z-10 h-full">
-                    {/* Number + Icon */}
-                    <div className="flex items-center justify-between mb-6">
-                      <span className="font-extrabold text-5xl text-primary/20 group-hover:text-primary/40 transition-colors">
-                        {step.number}
-                      </span>
-                      <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                        <step.icon className="w-7 h-7 text-primary" />
+                      {/* Content */}
+                      <h3 className="font-bold text-xl text-foreground mb-2">
+                        {step.title}
+                      </h3>
+                      <p className="text-muted-foreground leading-relaxed text-sm mb-3">
+                        {step.description}
+                      </p>
+
+                      {/* Duration badge */}
+                      <div className="inline-flex items-center px-3 py-1 rounded-full bg-primary/10 text-xs font-medium text-primary">
+                        {step.duration}
                       </div>
                     </div>
+                  </TiltedCard>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
 
-                    {/* Content */}
-                    <h3 className="font-bold text-2xl text-foreground mb-4">
-                      {step.title}
-                    </h3>
-                    <p className="text-muted-foreground leading-relaxed mb-4">
-                      {step.description}
-                    </p>
-
-                    {/* Duration badge */}
-                    <div className="inline-flex items-center px-3 py-1 rounded-full bg-primary/10 text-sm font-medium text-primary">
-                      {step.duration}
-                    </div>
-                  </div>
-                </TiltedCard>
-              </div>
-            </ScrollReveal>
-          ))}
+          {/* Right: Animated Card Stack */}
+          <ScrollReveal delay={300}>
+            <div className="flex justify-center lg:justify-end">
+              <AnimatedCardStack />
+            </div>
+          </ScrollReveal>
         </div>
       </div>
     </section>
