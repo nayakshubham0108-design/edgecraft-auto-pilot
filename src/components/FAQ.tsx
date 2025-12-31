@@ -4,6 +4,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { ScrollReveal } from "@/components/ScrollReveal";
 
 const faqs = [
   {
@@ -33,31 +34,34 @@ export function FAQ() {
     <section id="faq" className="py-24 lg:py-32 relative">
       <div className="container mx-auto">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="font-display font-bold text-3xl sm:text-4xl lg:text-5xl mb-6">
-            Frequently Asked Questions
-          </h2>
-          <p className="text-lg text-muted-foreground">
-            Clear, honest answers so you can make the right decision.
-          </p>
-        </div>
+        <ScrollReveal>
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <h2 className="font-bold text-3xl sm:text-4xl lg:text-5xl mb-6">
+              Frequently Asked Questions
+            </h2>
+            <p className="text-lg text-muted-foreground">
+              Clear, honest answers so you can make the right decision.
+            </p>
+          </div>
+        </ScrollReveal>
 
         {/* FAQ Accordion */}
         <div className="max-w-3xl mx-auto">
           <Accordion type="single" collapsible className="space-y-4">
             {faqs.map((faq, index) => (
-              <AccordionItem
-                key={index}
-                value={`item-${index}`}
-                className="glass-card rounded-xl px-6 border-0 data-[state=open]:border-primary/30 data-[state=open]:glow-soft transition-all duration-300"
-              >
-                <AccordionTrigger className="text-left font-display font-semibold text-lg hover:no-underline py-6 text-foreground hover:text-primary transition-colors">
-                  {faq.question}
-                </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground pb-6 leading-relaxed">
-                  {faq.answer}
-                </AccordionContent>
-              </AccordionItem>
+              <ScrollReveal key={index} delay={index * 100}>
+                <AccordionItem
+                  value={`item-${index}`}
+                  className="glass-card rounded-xl px-6 border-0 data-[state=open]:border-primary/30 data-[state=open]:glow-soft transition-all duration-300"
+                >
+                  <AccordionTrigger className="text-left font-semibold text-lg hover:no-underline py-6 text-foreground hover:text-primary transition-colors">
+                    {faq.question}
+                  </AccordionTrigger>
+                  <AccordionContent className="text-muted-foreground pb-6 leading-relaxed">
+                    {faq.answer}
+                  </AccordionContent>
+                </AccordionItem>
+              </ScrollReveal>
             ))}
           </Accordion>
         </div>
