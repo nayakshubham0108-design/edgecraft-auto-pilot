@@ -63,10 +63,10 @@ export function Features() {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {features.map((feature, index) => (
             <ScrollReveal key={feature.title} delay={index * 100}>
-              <div className="group glass-card rounded-2xl p-6 lg:p-8 hover:border-primary/30 transition-all duration-300 hover:glow-soft h-full">
+              <div className="group glass-card rounded-2xl p-6 lg:p-8 hover:border-accent/40 transition-all duration-300 hover:shadow-[0_0_40px_hsla(230,60%,40%,0.25)] h-full">
                 {/* Icon */}
-                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
-                  <feature.icon className="w-6 h-6 text-primary" />
+                <div className="w-12 h-12 rounded-xl bg-accent/20 flex items-center justify-center mb-6 group-hover:bg-accent/30 group-hover:shadow-[0_0_20px_hsla(230,60%,50%,0.4)] transition-all duration-300">
+                  <feature.icon className="w-6 h-6 text-primary group-hover:icon-glow transition-all" />
                 </div>
 
                 {/* Content */}

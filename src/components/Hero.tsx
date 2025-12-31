@@ -43,7 +43,7 @@ export function Hero() {
           </p>
 
           {/* Main headline */}
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.1] tracking-[-0.02em] mb-12 text-foreground">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.1] tracking-[-0.02em] mb-12 text-foreground animate-text-glow">
             scale your business or
             <br />
             save time with:
@@ -66,7 +66,7 @@ export function Hero() {
           <Button
             variant="hero"
             size="lg"
-            className="min-w-[220px] group text-base py-6"
+            className="min-w-[220px] group text-base py-6 animate-glow-breathe"
           >
             Book discovery call
             <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
