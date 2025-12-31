@@ -18,8 +18,8 @@ export function Navigation() {
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
           <a href="/" className="flex items-center gap-2 group">
-            <div className="w-9 h-9 rounded-lg bg-primary flex items-center justify-center group-hover:glow-primary transition-shadow duration-300">
-              <Zap className="w-5 h-5 text-primary-foreground" />
+            <div className="w-9 h-9 rounded-lg bg-accent flex items-center justify-center group-hover:shadow-[0_0_25px_hsla(230,60%,50%,0.5)] transition-all duration-300">
+              <Zap className="w-5 h-5 text-accent-foreground group-hover:icon-glow" />
             </div>
             <span className="font-display font-bold text-xl text-foreground">
               EdgeCraft<span className="text-primary">AI</span>
