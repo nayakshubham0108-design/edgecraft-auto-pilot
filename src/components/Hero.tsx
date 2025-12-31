@@ -67,6 +67,17 @@ export function Hero() {
 
       <div className="container mx-auto px-6 lg:px-8 relative z-10">
         <div className="mx-auto max-w-3xl text-center">
+          {/* Announcement banner */}
+          <div className="mb-8 flex justify-center">
+            <div className="relative rounded-full px-4 py-1.5 text-sm/6 text-muted-foreground ring-1 ring-border/30 hover:ring-border/50 transition-colors backdrop-blur-sm">
+              <span className="text-primary font-medium">EdgeCrafts</span>
+              {' '}— AI-powered business growth{' '}
+              <a href="#features" className="font-semibold text-primary hover:text-primary/80">
+                <span aria-hidden="true" className="absolute inset-0" />
+                Learn more <span aria-hidden="true">→</span>
+              </a>
+            </div>
+          </div>
 
           {/* Main headline */}
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-balance text-foreground">
