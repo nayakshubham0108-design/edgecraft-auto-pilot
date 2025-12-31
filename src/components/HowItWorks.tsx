@@ -1,27 +1,26 @@
-import { Search, Rocket, TrendingUp } from "lucide-react";
 import { ScrollReveal } from "@/components/ScrollReveal";
-import TiltedCard from "@/components/ui/tilted-card";
+import { UniqueAccordion } from "@/components/ui/interactive-accordion";
 
 const steps = [
   {
-    icon: Search,
+    id: "audit",
     number: "01",
     title: "Audit",
-    description: "We capture baseline metrics and access points to understand your current operations and identify the highest-impact opportunities.",
+    content: "We capture baseline metrics and access points to understand your current operations and identify the highest-impact opportunities.",
     duration: "3–5 days",
   },
   {
-    icon: Rocket,
+    id: "pilot",
     number: "02",
     title: "Pilot",
-    description: "We run a focused pilot on one channel and measure KPIs in real-time. You'll see results before committing to scale.",
+    content: "We run a focused pilot on one channel and measure KPIs in real-time. You'll see results before committing to scale.",
     duration: "7–21 days",
   },
   {
-    icon: TrendingUp,
+    id: "scale",
     number: "03",
     title: "Scale",
-    description: "We broaden coverage, add automations, harden SLA, and optimize continuously based on performance data.",
+    content: "We broaden coverage, add automations, harden SLA, and optimize continuously based on performance data.",
     duration: "Ongoing",
   },
 ];
@@ -44,46 +43,10 @@ export function HowItWorks() {
           </div>
         </ScrollReveal>
 
-        {/* Steps */}
-        <div className="grid md:grid-cols-3 gap-8 lg:gap-12">
-          {steps.map((step, index) => (
-            <ScrollReveal key={step.title} delay={index * 150} direction="up">
-              <div className="relative group">
-                {/* Connector line */}
-                {index < steps.length - 1 && (
-                  <div className="hidden md:block absolute top-16 left-full w-full h-px bg-gradient-to-r from-primary/50 to-transparent -translate-x-1/2 z-0" />
-                )}
-
-                <TiltedCard>
-                  <div className="glass-card rounded-2xl p-8 hover:border-primary/30 transition-all duration-300 relative z-10 h-full">
-                    {/* Number + Icon */}
-                    <div className="flex items-center justify-between mb-6">
-                      <span className="font-extrabold text-5xl text-primary/20 group-hover:text-primary/40 transition-colors">
-                        {step.number}
-                      </span>
-                      <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                        <step.icon className="w-7 h-7 text-primary" />
-                      </div>
-                    </div>
-
-                    {/* Content */}
-                    <h3 className="font-bold text-2xl text-foreground mb-4">
-                      {step.title}
-                    </h3>
-                    <p className="text-muted-foreground leading-relaxed mb-4">
-                      {step.description}
-                    </p>
-
-                    {/* Duration badge */}
-                    <div className="inline-flex items-center px-3 py-1 rounded-full bg-primary/10 text-sm font-medium text-primary">
-                      {step.duration}
-                    </div>
-                  </div>
-                </TiltedCard>
-              </div>
-            </ScrollReveal>
-          ))}
-        </div>
+        {/* Interactive Accordion */}
+        <ScrollReveal>
+          <UniqueAccordion items={steps} />
+        </ScrollReveal>
       </div>
     </section>
   );
