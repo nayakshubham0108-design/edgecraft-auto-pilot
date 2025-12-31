@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { useState, useEffect } from "react";
+import { EtherealBeamsBackground } from "@/components/ui/ethereal-beams-hero";
 
 const cyclingTexts = [
   "Redesign your website with AI-driven conversion focus",
@@ -31,6 +32,9 @@ export function Hero() {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background isolate">
+      {/* Ethereal beams 3D background */}
+      <EtherealBeamsBackground lightColor="#22c55e" speed={2} rotation={0} />
+      
       {/* Top gradient background */}
       <div
         aria-hidden="true"
@@ -40,8 +44,9 @@ export function Hero() {
           style={{
             clipPath:
               'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',
+            background: 'linear-gradient(to top right, hsla(142, 70%, 45%, 0.4), hsla(142, 70%, 30%, 0.3))',
           }}
-          className="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-primary/40 to-primary/20 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
+          className="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
         />
       </div>
 
@@ -54,19 +59,20 @@ export function Hero() {
           style={{
             clipPath:
               'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',
+            background: 'linear-gradient(to top right, hsla(142, 70%, 35%, 0.35), hsla(142, 70%, 50%, 0.25))',
           }}
-          className="relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-primary/30 to-primary/50 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]"
+          className="relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]"
         />
       </div>
 
-      <div className="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-8 relative z-10">
-        <div className="mx-auto max-w-2xl text-center">
+      <div className="container mx-auto px-6 lg:px-8 relative z-10">
+        <div className="mx-auto max-w-3xl text-center">
           {/* Announcement banner */}
           <div className="mb-8 flex justify-center">
-            <div className="relative rounded-full px-3 py-1 text-sm/6 text-muted-foreground ring-1 ring-primary/20 hover:ring-primary/40 transition-colors">
+            <div className="relative rounded-full px-4 py-1.5 text-sm/6 text-muted-foreground ring-1 ring-border/30 hover:ring-border/50 transition-colors backdrop-blur-sm">
               <span className="text-primary font-medium">EdgeCrafts</span>
               {' '}— AI-powered business growth{' '}
-              <a href="#features" className="font-semibold text-primary">
+              <a href="#features" className="font-semibold text-primary hover:text-primary/80">
                 <span aria-hidden="true" className="absolute inset-0" />
                 Learn more <span aria-hidden="true">→</span>
               </a>
@@ -74,7 +80,7 @@ export function Hero() {
           </div>
 
           {/* Main headline */}
-          <h1 className="text-balance text-4xl font-semibold tracking-tight text-foreground sm:text-5xl md:text-6xl lg:text-7xl">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-balance text-foreground">
             Scale your business or save time with{' '}
             <span className="text-primary">AI</span>
           </h1>
@@ -82,7 +88,7 @@ export function Hero() {
           {/* Cycling text as description */}
           <div className="mt-8 h-16 md:h-20 flex items-center justify-center">
             <p
-              className={`text-lg text-pretty text-muted-foreground sm:text-xl/8 transition-all duration-500 ${
+              className={`text-lg sm:text-xl text-pretty text-muted-foreground max-w-2xl transition-all duration-500 ${
                 isAnimating
                   ? "opacity-0 translate-y-4"
                   : "opacity-100 translate-y-0"
@@ -95,9 +101,9 @@ export function Hero() {
           {/* CTA Buttons */}
           <div className="mt-10 flex items-center justify-center gap-x-6">
             <Button
-              variant="default"
+              variant="hero"
               size="lg"
-              className="rounded-md bg-primary px-3.5 py-2.5 text-sm font-semibold text-primary-foreground shadow-sm hover:bg-primary/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary group"
+              className="group text-base"
             >
               Book discovery call
               <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
