@@ -61,19 +61,6 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
-        // Emerald flow colors
-        emerald: {
-          50: "hsl(142 76% 95%)",
-          100: "hsl(142 72% 85%)",
-          200: "hsl(142 70% 75%)",
-          300: "hsl(142 70% 65%)",
-          400: "hsl(142 70% 55%)",
-          500: "hsl(142 70% 50%)",
-          600: "hsl(142 70% 40%)",
-          700: "hsl(142 70% 30%)",
-          800: "hsl(142 70% 20%)",
-          900: "hsl(142 70% 10%)",
-        },
       },
       borderRadius: {
         lg: "var(--radius)",

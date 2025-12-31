@@ -9,7 +9,7 @@ function ElegantShape({
   width = 400,
   height = 100,
   rotate = 0,
-  gradient = "from-primary/[0.08]",
+  gradient = "from-primary/[0.15]",
 }: {
   className?: string;
   delay?: number;
@@ -20,18 +20,19 @@ function ElegantShape({
 }) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: -150, rotate: rotate - 15 }}
-      animate={{ opacity: 1, y: 0, rotate: rotate }}
+      initial={{ opacity: 0, scale: 0.8, rotate: rotate - 15 }}
+      animate={{ opacity: 1, scale: 1, rotate: rotate }}
       transition={{
         duration: 2.4,
         delay,
         ease: [0.23, 0.86, 0.39, 0.96],
-        opacity: { duration: 1.2 },
       }}
       className={cn("absolute", className)}
     >
       <motion.div
-        animate={{ y: [0, 15, 0] }}
+        animate={{
+          y: [0, 15, 0],
+        }}
         transition={{
           duration: 12,
           repeat: Infinity,
@@ -45,10 +46,10 @@ function ElegantShape({
             "absolute inset-0 rounded-full",
             "bg-gradient-to-r to-transparent",
             gradient,
-            "backdrop-blur-[2px] border border-emerald-500/[0.25]",
-            "shadow-[0_8px_48px_0_rgba(16,185,129,0.35),0_0_80px_0_rgba(34,197,94,0.2)]",
+            "backdrop-blur-[2px] border border-primary/[0.15]",
+            "shadow-[0_8px_32px_0_hsla(142,70%,45%,0.2)]",
             "after:absolute after:inset-0 after:rounded-full",
-            "after:bg-[radial-gradient(circle_at_50%_50%,rgba(34,197,94,0.4),transparent_70%)]"
+            "after:bg-[radial-gradient(circle_at_50%_50%,hsla(142,70%,45%,0.2),transparent_70%)]"
           )}
         />
       </motion.div>
@@ -59,53 +60,46 @@ function ElegantShape({
 function HeroShapesBackground() {
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none">
-      {/* Fade overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-background/80 z-[1]" />
-
-      {/* Geometric shapes */}
+      {/* Floating geometric shapes */}
       <ElegantShape
         delay={0.3}
         width={600}
         height={140}
         rotate={12}
-        gradient="from-emerald-500/[0.15]"
+        gradient="from-primary/[0.12]"
         className="left-[-10%] md:left-[-5%] top-[15%] md:top-[20%]"
       />
-
       <ElegantShape
         delay={0.5}
         width={500}
         height={120}
         rotate={-15}
-        gradient="from-green-500/[0.12]"
+        gradient="from-primary/[0.10]"
         className="right-[-5%] md:right-[0%] top-[70%] md:top-[75%]"
       />
-
       <ElegantShape
         delay={0.4}
         width={300}
         height={80}
         rotate={-8}
-        gradient="from-emerald-400/[0.10]"
+        gradient="from-primary/[0.08]"
         className="left-[5%] md:left-[10%] bottom-[5%] md:bottom-[10%]"
       />
-
       <ElegantShape
         delay={0.6}
         width={200}
         height={60}
         rotate={20}
-        gradient="from-green-400/[0.12]"
+        gradient="from-primary/[0.10]"
         className="right-[15%] md:right-[20%] top-[10%] md:top-[15%]"
       />
-
       <ElegantShape
         delay={0.7}
         width={150}
         height={40}
         rotate={-25}
-        gradient="from-emerald-500/[0.08]"
-        className="left-[20%] md:left-[25%] top-[5%] md:top-[8%]"
+        gradient="from-primary/[0.08]"
+        className="left-[60%] md:left-[70%] top-[5%] md:top-[10%]"
       />
     </div>
   );
