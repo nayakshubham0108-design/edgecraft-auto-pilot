@@ -9,7 +9,6 @@ interface AccordionItem {
   title: string
   content: string
   duration?: string
-  image?: string
 }
 
 interface UniqueAccordionProps {
@@ -141,25 +140,9 @@ export function UniqueAccordion({ items }: UniqueAccordionProps) {
                     transition={{ duration: 0.3, ease: "easeInOut" }}
                     className="overflow-hidden"
                   >
-                  <div className="px-4 pb-6 pt-2 pl-16 flex flex-col md:flex-row gap-6">
-                    <p className="text-muted-foreground text-lg leading-relaxed flex-1">
+                    <p className="px-4 pb-6 pt-2 text-muted-foreground text-lg leading-relaxed pl-16">
                       {item.content}
                     </p>
-                    {item.image && (
-                      <motion.div 
-                        className="w-full md:w-64 h-40 rounded-lg overflow-hidden flex-shrink-0"
-                        initial={{ opacity: 0, scale: 0.9 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        transition={{ delay: 0.1, duration: 0.3 }}
-                      >
-                        <img 
-                          src={item.image} 
-                          alt={item.title}
-                          className="w-full h-full object-cover"
-                        />
-                      </motion.div>
-                    )}
-                  </div>
                   </motion.div>
                 )}
               </AnimatePresence>
