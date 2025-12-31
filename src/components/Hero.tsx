@@ -1,79 +1,79 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Play } from "lucide-react";
-import { ScrollReveal } from "@/components/ScrollReveal";
+import { ArrowRight } from "lucide-react";
+import { useState, useEffect } from "react";
+
+const cyclingTexts = [
+  "Redesign your website with AI-driven conversion focus",
+  "AI content creator that writes, designs, and uploads automatically",
+  "Custom AI software tailored to your business workflows",
+  "AI that sells your products and services while you sleep",
+  "Automated campaigns that send thousands of personalized emails daily",
+  "Human-like AI callers that engage, answer, and close — 24/7",
+  "Never miss a lead — capture and follow up automatically",
+  "24/7 AI support that resolves 90% of customer issues instantly",
+  "Increase your revenue with AI automation",
+];
 
 export function Hero() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isAnimating, setIsAnimating] = useState(false);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIsAnimating(true);
+      setTimeout(() => {
+        setCurrentIndex((prev) => (prev + 1) % cyclingTexts.length);
+        setIsAnimating(false);
+      }, 500);
+    }, 3500);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
-    <section className="relative min-h-[90vh] flex items-center pt-24 pb-16 overflow-hidden">
-      {/* Subtle background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-background to-secondary/20" />
-      
-      {/* Minimal accent line */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-32 bg-gradient-to-b from-transparent via-primary/40 to-transparent" />
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background">
+      {/* Gradient background */}
+      <div className="absolute inset-0 bg-gradient-to-b from-primary/10 via-background to-background" />
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-primary/20 rounded-full blur-[120px] opacity-50" />
 
       <div className="container mx-auto px-6 relative z-10">
-        <div className="max-w-4xl mx-auto text-center">
-          {/* Small label */}
-          <ScrollReveal delay={0}>
-            <p className="text-sm tracking-[0.2em] uppercase text-primary mb-8">
-              AI Automation Agency
+        <div className="max-w-5xl mx-auto text-center">
+          {/* Brand label */}
+          <p className="text-sm tracking-[0.3em] uppercase text-primary font-semibold mb-8">
+            EdgeCrafts
+          </p>
+
+          {/* Main headline */}
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.1] tracking-[-0.02em] mb-12 text-foreground">
+            scale your business or
+            <br />
+            save time with:
+          </h1>
+
+          {/* Cycling text */}
+          <div className="h-24 md:h-28 flex items-center justify-center mb-12">
+            <p
+              className={`text-xl sm:text-2xl md:text-3xl text-muted-foreground max-w-3xl mx-auto leading-relaxed transition-all duration-500 ${
+                isAnimating
+                  ? "opacity-0 translate-y-4"
+                  : "opacity-100 translate-y-0"
+              }`}
+            >
+              {cyclingTexts[currentIndex]}
             </p>
-          </ScrollReveal>
+          </div>
 
-          {/* Main headline - Poppins bold */}
-          <ScrollReveal delay={100}>
-            <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-[1.05] tracking-[-0.02em] mb-8">
-              Stop losing leads.
-              <br />
-              <span className="text-primary">Start booking</span> them.
-            </h1>
-          </ScrollReveal>
-
-          {/* Subheadline - refined */}
-          <ScrollReveal delay={200}>
-            <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-12 leading-relaxed">
-              Voice agents, chatbots, and automations that capture missed revenue around the clock. Launch your pilot in 7 days.
-            </p>
-          </ScrollReveal>
-
-          {/* CTAs - clean, spaced */}
-          <ScrollReveal delay={300}>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
-              <Button variant="hero" size="lg" className="min-w-[200px] group">
-                Book a Pilot
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </Button>
-              <Button variant="ghost" size="lg" className="min-w-[200px] text-muted-foreground hover:text-foreground">
-                <Play className="w-4 h-4 mr-2" />
-                Watch Demo
-              </Button>
-            </div>
-          </ScrollReveal>
-
-          {/* Minimal stats row */}
-          <ScrollReveal delay={400}>
-            <div className="flex items-center justify-center gap-12 md:gap-16 text-sm">
-              <div className="text-center">
-                <p className="text-3xl md:text-4xl font-bold text-foreground mb-1">30</p>
-                <p className="text-muted-foreground">day payback</p>
-              </div>
-              <div className="w-px h-12 bg-border" />
-              <div className="text-center">
-                <p className="text-3xl md:text-4xl font-bold text-foreground mb-1">98.9%</p>
-                <p className="text-muted-foreground">accuracy</p>
-              </div>
-              <div className="w-px h-12 bg-border" />
-              <div className="text-center">
-                <p className="text-3xl md:text-4xl font-bold text-foreground mb-1">7</p>
-                <p className="text-muted-foreground">day launch</p>
-              </div>
-            </div>
-          </ScrollReveal>
+          {/* CTA Button */}
+          <Button
+            variant="outline"
+            size="lg"
+            className="min-w-[220px] border-primary/50 text-foreground hover:bg-primary/10 hover:border-primary group text-base py-6"
+          >
+            Book discovery call
+            <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+          </Button>
         </div>
       </div>
-
-      {/* Bottom fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent" />
     </section>
   );
 }
