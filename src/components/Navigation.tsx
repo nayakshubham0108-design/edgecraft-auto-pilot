@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Zap } from "lucide-react";
+import { PillBase } from "@/components/ui/3d-adaptive-navigation-bar";
 
 const navLinks = [
   { label: "Services", href: "#services" },
@@ -11,6 +12,13 @@ const navLinks = [
 
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
+
+  const handleNavigate = (href: string) => {
+    const element = document.querySelector(href);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 glass-card border-b border-border/50">
@@ -26,17 +34,9 @@ export function Navigation() {
             </span>
           </a>
 
-          {/* Desktop Nav */}
-          <div className="hidden md:flex items-center gap-8">
-            {navLinks.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-200"
-              >
-                {link.label}
-              </a>
-            ))}
+          {/* Desktop Nav - 3D Pill */}
+          <div className="hidden md:flex items-center">
+            <PillBase items={navLinks} onNavigate={handleNavigate} />
           </div>
 
           {/* CTA */}
