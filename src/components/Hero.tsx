@@ -31,33 +31,64 @@ export function Hero() {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background isolate">
       {/* Ethereal beams 3D background */}
       <EtherealBeamsBackground lightColor="#22c55e" speed={2} rotation={0} />
       
-      {/* Green aurora gradient overlay */}
-      <div className="absolute inset-0 bg-aurora-green pointer-events-none" />
-      <div className="absolute bottom-0 right-0 w-[800px] h-[500px] bg-[radial-gradient(ellipse_at_100%_100%,hsla(142,70%,40%,0.3)_0%,transparent_60%)] pointer-events-none" />
-      <div className="absolute top-0 left-1/4 w-[400px] h-[300px] bg-[radial-gradient(ellipse_at_50%_0%,hsla(142,70%,45%,0.1)_0%,transparent_50%)] pointer-events-none" />
+      {/* Top gradient background */}
+      <div
+        aria-hidden="true"
+        className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
+      >
+        <div
+          style={{
+            clipPath:
+              'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',
+            background: 'linear-gradient(to top right, hsla(142, 70%, 45%, 0.4), hsla(142, 70%, 30%, 0.3))',
+          }}
+          className="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
+        />
+      </div>
 
-      <div className="container mx-auto px-6 relative z-10">
-        <div className="max-w-5xl mx-auto text-center">
-          {/* Brand label */}
-          <p className="text-sm tracking-[0.3em] uppercase text-primary font-semibold mb-8">
-            EdgeCrafts
-          </p>
+      {/* Bottom gradient background */}
+      <div
+        aria-hidden="true"
+        className="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"
+      >
+        <div
+          style={{
+            clipPath:
+              'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',
+            background: 'linear-gradient(to top right, hsla(142, 70%, 35%, 0.35), hsla(142, 70%, 50%, 0.25))',
+          }}
+          className="relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]"
+        />
+      </div>
+
+      <div className="container mx-auto px-6 lg:px-8 relative z-10">
+        <div className="mx-auto max-w-3xl text-center">
+          {/* Announcement banner */}
+          <div className="mb-8 flex justify-center">
+            <div className="relative rounded-full px-4 py-1.5 text-sm/6 text-muted-foreground ring-1 ring-border/30 hover:ring-border/50 transition-colors backdrop-blur-sm">
+              <span className="text-primary font-medium">EdgeCrafts</span>
+              {' '}— AI-powered business growth{' '}
+              <a href="#features" className="font-semibold text-primary hover:text-primary/80">
+                <span aria-hidden="true" className="absolute inset-0" />
+                Learn more <span aria-hidden="true">→</span>
+              </a>
+            </div>
+          </div>
 
           {/* Main headline */}
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.1] tracking-[-0.02em] mb-12 text-foreground animate-text-glow">
-            scale your business or
-            <br />
-            save time with:
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-balance text-foreground">
+            Scale your business or save time with{' '}
+            <span className="text-primary">AI</span>
           </h1>
 
-          {/* Cycling text */}
-          <div className="h-24 md:h-28 flex items-center justify-center mb-12">
+          {/* Cycling text as description */}
+          <div className="mt-8 h-16 md:h-20 flex items-center justify-center">
             <p
-              className={`text-xl sm:text-2xl md:text-3xl text-muted-foreground max-w-3xl mx-auto leading-relaxed transition-all duration-500 ${
+              className={`text-lg sm:text-xl text-pretty text-muted-foreground max-w-2xl transition-all duration-500 ${
                 isAnimating
                   ? "opacity-0 translate-y-4"
                   : "opacity-100 translate-y-0"
@@ -67,15 +98,23 @@ export function Hero() {
             </p>
           </div>
 
-          {/* CTA Button */}
-          <Button
-            variant="hero"
-            size="lg"
-            className="min-w-[220px] group text-base py-6 animate-glow-breathe"
-          >
-            Book discovery call
-            <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-          </Button>
+          {/* CTA Buttons */}
+          <div className="mt-10 flex items-center justify-center gap-x-6">
+            <Button
+              variant="hero"
+              size="lg"
+              className="group text-base"
+            >
+              Book discovery call
+              <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+            </Button>
+            <a
+              href="#how-it-works"
+              className="text-sm/6 font-semibold text-foreground hover:text-primary transition-colors"
+            >
+              Learn more <span aria-hidden="true">→</span>
+            </a>
+          </div>
         </div>
       </div>
     </section>
