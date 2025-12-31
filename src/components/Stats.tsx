@@ -1,6 +1,7 @@
 import { useEffect, useState, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { TrendingUp } from "lucide-react";
+import { ScrollReveal } from "@/components/ScrollReveal";
 
 const stats = [
   { value: 98.3, suffix: "%", label: "Growth Every Year", subLabel: "Consistent performance" },
@@ -57,7 +58,7 @@ function AnimatedNumber({ value, suffix }: { value: number; suffix: string }) {
   };
 
   return (
-    <div ref={ref} className="font-display font-extrabold text-4xl lg:text-5xl text-foreground">
+    <div ref={ref} className="font-bold text-4xl lg:text-5xl text-foreground">
       {formatNumber(count)}{suffix}
     </div>
   );
@@ -71,68 +72,73 @@ export function Stats() {
       
       <div className="container mx-auto relative z-10">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="font-display font-bold text-3xl sm:text-4xl lg:text-5xl mb-6">
-            Faster. Smarter. Scalable<br />
-            <span className="text-gradient">Beyond Expectations.</span>
-          </h2>
-          <p className="text-lg text-muted-foreground">
-            These metrics show exactly how our AI transforms real operations, real teams, and real outcomes at scale.
-          </p>
-        </div>
+        <ScrollReveal>
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <h2 className="font-bold text-3xl sm:text-4xl lg:text-5xl mb-6">
+              Faster. Smarter. Scalable<br />
+              <span className="text-gradient">Beyond Expectations.</span>
+            </h2>
+            <p className="text-lg text-muted-foreground">
+              These metrics show exactly how our AI transforms real operations, real teams, and real outcomes at scale.
+            </p>
+          </div>
+        </ScrollReveal>
 
         {/* Stats Grid */}
         <div className="grid lg:grid-cols-2 gap-8 items-stretch">
           {/* Left - Large Stat Card */}
-          <div className="glass-card rounded-2xl p-8 lg:p-10 glow-soft">
-            <div className="flex items-start justify-between mb-8">
-              <div>
-                <AnimatedNumber value={98.3} suffix="%" />
-                <p className="text-lg text-muted-foreground mt-2">Growth Every Year</p>
+          <ScrollReveal delay={100}>
+            <div className="glass-card rounded-2xl p-8 lg:p-10 glow-soft h-full">
+              <div className="flex items-start justify-between mb-8">
+                <div>
+                  <AnimatedNumber value={98.3} suffix="%" />
+                  <p className="text-lg text-muted-foreground mt-2">Growth Every Year</p>
+                </div>
+                <div className="w-10 h-10 rounded-lg bg-primary/20 flex items-center justify-center">
+                  <TrendingUp className="w-5 h-5 text-primary" />
+                </div>
               </div>
-              <div className="w-10 h-10 rounded-lg bg-primary/20 flex items-center justify-center">
-                <TrendingUp className="w-5 h-5 text-primary" />
-              </div>
-            </div>
 
-            {/* Mini bar chart */}
-            <div className="flex items-end gap-4 h-32">
-              <div className="flex-1 flex flex-col items-center gap-2">
-                <div className="w-full bg-primary/80 rounded-t-lg" style={{ height: "100%" }} />
-                <span className="text-xs text-muted-foreground">2025</span>
-              </div>
-              <div className="flex-1 flex flex-col items-center gap-2">
-                <div className="w-full bg-primary/60 rounded-t-lg" style={{ height: "75%" }} />
-                <span className="text-xs text-muted-foreground">2024</span>
-              </div>
-              <div className="flex-1 flex flex-col items-center gap-2">
-                <div className="w-full bg-primary/40 rounded-t-lg" style={{ height: "55%" }} />
-                <span className="text-xs text-muted-foreground">2023</span>
+              {/* Mini bar chart */}
+              <div className="flex items-end gap-4 h-32">
+                <div className="flex-1 flex flex-col items-center gap-2">
+                  <div className="w-full bg-primary/80 rounded-t-lg" style={{ height: "100%" }} />
+                  <span className="text-xs text-muted-foreground">2025</span>
+                </div>
+                <div className="flex-1 flex flex-col items-center gap-2">
+                  <div className="w-full bg-primary/60 rounded-t-lg" style={{ height: "75%" }} />
+                  <span className="text-xs text-muted-foreground">2024</span>
+                </div>
+                <div className="flex-1 flex flex-col items-center gap-2">
+                  <div className="w-full bg-primary/40 rounded-t-lg" style={{ height: "55%" }} />
+                  <span className="text-xs text-muted-foreground">2023</span>
+                </div>
               </div>
             </div>
-          </div>
+          </ScrollReveal>
 
           {/* Right - Stats Grid */}
           <div className="grid grid-cols-2 gap-4">
             {stats.slice(1).map((stat, index) => (
-              <div
-                key={stat.label}
-                className="glass-card rounded-xl p-6 hover:border-primary/30 transition-all duration-300"
-              >
-                <AnimatedNumber value={stat.value} suffix={stat.suffix} />
-                <p className="text-sm font-medium text-foreground mt-2">{stat.label}</p>
-                <p className="text-xs text-muted-foreground mt-1">{stat.subLabel}</p>
-              </div>
+              <ScrollReveal key={stat.label} delay={200 + index * 100}>
+                <div className="glass-card rounded-xl p-6 hover:border-primary/30 transition-all duration-300 h-full">
+                  <AnimatedNumber value={stat.value} suffix={stat.suffix} />
+                  <p className="text-sm font-medium text-foreground mt-2">{stat.label}</p>
+                  <p className="text-xs text-muted-foreground mt-1">{stat.subLabel}</p>
+                </div>
+              </ScrollReveal>
             ))}
           </div>
         </div>
 
         {/* CTA */}
-        <div className="text-center mt-12">
-          <Button variant="hero" size="lg">
-            Learn More
-          </Button>
-        </div>
+        <ScrollReveal delay={600}>
+          <div className="text-center mt-12">
+            <Button variant="hero" size="lg">
+              Learn More
+            </Button>
+          </div>
+        </ScrollReveal>
       </div>
     </section>
   );
