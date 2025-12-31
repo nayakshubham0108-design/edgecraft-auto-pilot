@@ -41,41 +41,51 @@ export function Hero() {
       <div className="absolute top-0 left-1/4 w-[400px] h-[300px] bg-[radial-gradient(ellipse_at_50%_0%,hsla(142,70%,45%,0.1)_0%,transparent_50%)] pointer-events-none" />
 
       <div className="container mx-auto px-6 relative z-10">
-        <div className="max-w-5xl mx-auto text-center">
-          {/* Brand label */}
-          <p className="text-sm tracking-[0.3em] uppercase text-primary font-semibold mb-8">
-            EdgeCrafts
-          </p>
-
-          {/* Main headline */}
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.1] tracking-[-0.02em] mb-12 text-foreground animate-text-glow">
-            scale your business or
-            <br />
-            save time with:
-          </h1>
-
-          {/* Cycling text */}
-          <div className="h-24 md:h-28 flex items-center justify-center mb-12">
-            <p
-              className={`text-xl sm:text-2xl md:text-3xl text-muted-foreground max-w-3xl mx-auto leading-relaxed transition-all duration-500 ${
-                isAnimating
-                  ? "opacity-0 translate-y-4"
-                  : "opacity-100 translate-y-0"
-              }`}
-            >
-              {cyclingTexts[currentIndex]}
-            </p>
+        <div className="max-w-4xl mx-auto text-center">
+          {/* Announcement banner */}
+          <div className="mb-8">
+            <div className="inline-flex items-center gap-x-4 rounded-full px-4 py-1.5 text-sm ring-1 ring-primary/20 bg-primary/5 backdrop-blur-sm">
+              <span className="text-primary font-semibold">EdgeCrafts</span>
+              <span className="h-4 w-px bg-primary/20" />
+              <span
+                className={`text-muted-foreground transition-all duration-500 ${
+                  isAnimating ? "opacity-0" : "opacity-100"
+                }`}
+              >
+                {cyclingTexts[currentIndex]}
+              </span>
+            </div>
           </div>
 
-          {/* CTA Button */}
-          <Button
-            variant="hero"
-            size="lg"
-            className="min-w-[220px] group text-base py-6 animate-glow-breathe"
-          >
-            Book discovery call
-            <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-          </Button>
+          {/* Main headline */}
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.1] tracking-tight mb-8 text-foreground">
+            Scale Your Business
+            <br />
+            <span className="text-primary">with AI Automation</span>
+          </h1>
+
+          {/* Description */}
+          <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed mb-10">
+            Transform your workflow with AI-powered solutions. Custom software, automated campaigns, and 24/7 support that drives results.
+          </p>
+
+          {/* CTA Buttons */}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <Button
+              variant="hero"
+              size="lg"
+              className="min-w-[180px] group text-base py-6"
+            >
+              Book discovery call
+              <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+            </Button>
+            <a
+              href="#features"
+              className="text-sm font-semibold text-foreground hover:text-primary transition-colors inline-flex items-center gap-1"
+            >
+              Learn more <span aria-hidden="true">→</span>
+            </a>
+          </div>
         </div>
       </div>
     </section>
