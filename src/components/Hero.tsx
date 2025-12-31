@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 
 const cyclingTexts = [
   "Redesign your website with AI-driven conversion focus",
-  "AI content creator that writes, designs, and uploads automatically",
   "Custom AI software tailored to your business workflows",
   "AI that sells your products and services while you sleep",
   "Automated campaigns that send thousands of personalized emails daily",
