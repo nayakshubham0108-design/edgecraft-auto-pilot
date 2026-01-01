@@ -98,6 +98,7 @@ export function Testimonials() {
             testimonials={secondColumn}
             className="hidden md:block"
             duration={19}
+            reverse
           />
           <TestimonialsColumn
             testimonials={thirdColumn}
