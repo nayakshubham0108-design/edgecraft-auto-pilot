@@ -2,12 +2,12 @@ import { Navigation } from "@/components/Navigation";
 import { Hero } from "@/components/Hero";
 import { Features } from "@/components/Features";
 import { Stats } from "@/components/Stats";
-import { ROICalculator } from "@/components/ROICalculator";
 import { HowItWorks } from "@/components/HowItWorks";
 import { Testimonials } from "@/components/Testimonials";
 import { FAQ } from "@/components/FAQ";
 import { BookingForm } from "@/components/BookingForm";
 import { CTA } from "@/components/CTA";
+import { FreeTools } from "@/components/FreeTools";
 import { Footer } from "@/components/Footer";
 
 const Index = () => {
@@ -18,12 +18,12 @@ const Index = () => {
         <Hero />
         <Features />
         <Stats />
-        <ROICalculator />
         <HowItWorks />
         <Testimonials />
         <FAQ />
         <BookingForm />
         <CTA />
+        <FreeTools />
       </main>
       <Footer />
     </div>
