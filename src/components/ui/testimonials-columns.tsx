@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { SpotlightCard } from "@/components/ui/spotlight-card";
 
@@ -16,8 +16,14 @@ export const TestimonialsColumn = (props: {
   duration?: number;
   reverse?: boolean;
 }) => {
+  const [isHovered, setIsHovered] = useState(false);
+
   return (
-    <div className={props.className}>
+    <div 
+      className={props.className}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
       <motion.div
         initial={{
           translateY: props.reverse ? "-50%" : "0%",
@@ -31,7 +37,11 @@ export const TestimonialsColumn = (props: {
           ease: "linear",
           repeatType: "loop",
         }}
+        style={{
+          animationPlayState: isHovered ? "paused" : "running",
+        }}
         className="flex flex-col gap-6 pb-6"
+        whileHover={{ animationPlayState: "paused" }}
       >
         {[
           ...new Array(2).fill(0).map((_, index) => (
