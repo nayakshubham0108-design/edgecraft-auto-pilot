@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Star, Users } from "lucide-react";
+import { ArrowRight, Star } from "lucide-react";
 import { ScrollReveal } from "@/components/ScrollReveal";
 
 export function CTA() {
@@ -37,24 +37,10 @@ export function CTA() {
             </div>
 
             {/* Social Proof */}
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+            <div className="flex items-center justify-center">
               <div className="flex items-center gap-2">
                 <Star className="w-5 h-5 fill-primary text-primary" />
                 <span className="text-sm text-foreground font-medium">4.9/5.0</span>
-              </div>
-              <div className="hidden sm:block w-px h-6 bg-border" />
-              <div className="flex items-center gap-2">
-                <div className="flex -space-x-2">
-                  {[...Array(4)].map((_, i) => (
-                    <div
-                      key={i}
-                      className="w-8 h-8 rounded-full bg-primary/20 border-2 border-background flex items-center justify-center"
-                    >
-                      <Users className="w-4 h-4 text-primary" />
-                    </div>
-                  ))}
-                </div>
-                <span className="text-sm text-muted-foreground">30M+ Users</span>
               </div>
             </div>
           </div>
