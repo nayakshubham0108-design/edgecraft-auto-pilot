@@ -65,7 +65,7 @@ export function Navigation() {
             {/* CTA */}
             <div className="hidden md:flex items-center">
               <Button variant="hero" size="default">
-                Book Pilot
+                Book a Discovery Call
               </Button>
             </div>
 
@@ -140,7 +140,7 @@ export function Navigation() {
                 className="pt-4 mt-4 border-t border-border/30"
               >
                 <Button variant="hero" size="default" className="w-full rounded-xl">
-                  Book Pilot
+                  Book a Discovery Call
                 </Button>
               </motion.div>
             </div>
