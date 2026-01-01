@@ -90,11 +90,11 @@ export function Features() {
         <ScrollReveal>
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="font-bold text-3xl sm:text-4xl lg:text-5xl mb-6">
-              The AI Engine That Makes<br />
-              <span className="text-gradient">Your Data Work For You</span>
+              The Automation Layer Behind<br />
+              <span className="text-gradient">High-Performing Businesses</span>
             </h2>
             <p className="text-lg text-muted-foreground">
-              Upgraded with intelligent automation built to save time, reduce errors, and accelerate outcomes.
+              Automating calls, customer conversations, and internal workflows so your business runs faster, closes more, and scales without adding headcount.
             </p>
           </div>
         </ScrollReveal>
