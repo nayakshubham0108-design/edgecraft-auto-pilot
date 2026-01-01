@@ -31,8 +31,9 @@ const footerLinks = {
 
 export function Footer() {
   return (
-    <footer className="border-t border-border py-16 lg:py-20">
-      <div className="container mx-auto">
+    <footer className="border-t border-border py-16 lg:py-20 relative overflow-hidden">
+      <div className="absolute inset-0 bg-aurora-green-center opacity-50 pointer-events-none" />
+      <div className="container mx-auto relative z-10">
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 lg:gap-12">
           {/* Logo & Description */}
           <div className="col-span-2">

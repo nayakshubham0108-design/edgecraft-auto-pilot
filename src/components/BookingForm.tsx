@@ -116,8 +116,9 @@ export const BookingForm = () => {
   return (
     <section id="book-pilot" className="py-24 px-6 relative overflow-hidden">
       {/* Background effects */}
-      <div className="absolute inset-0 bg-gradient-hero" />
-      <div className="absolute bottom-0 left-1/4 w-[600px] h-[600px] bg-primary/5 rounded-full blur-3xl" />
+      <div className="absolute inset-0 bg-aurora-green" />
+      <div className="absolute top-0 right-0 w-[500px] h-[400px] bg-[radial-gradient(ellipse_at_100%_0%,hsla(168,60%,40%,0.12)_0%,transparent_50%)]" />
+      <div className="absolute bottom-0 left-1/4 w-[600px] h-[600px] bg-primary/4 rounded-full blur-3xl" />
       
       <div className="max-w-6xl mx-auto relative">
         {/* Header */}

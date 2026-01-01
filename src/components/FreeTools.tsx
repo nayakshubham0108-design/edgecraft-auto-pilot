@@ -9,7 +9,9 @@ export const FreeTools = () => {
   return (
     <>
       <section id="free-tools" className="py-24 px-6 relative overflow-hidden">
-        <div className="max-w-4xl mx-auto relative">
+        <div className="absolute inset-0 bg-aurora-green-top pointer-events-none" />
+        <div className="absolute bottom-0 right-0 w-[400px] h-[300px] bg-[radial-gradient(ellipse_at_100%_100%,hsla(158,65%,45%,0.12)_0%,transparent_50%)] pointer-events-none" />
+        <div className="max-w-4xl mx-auto relative z-10">
           <ScrollReveal>
             <div className="mb-8">
               <h2 className="text-2xl md:text-3xl font-bold tracking-tight mb-3">

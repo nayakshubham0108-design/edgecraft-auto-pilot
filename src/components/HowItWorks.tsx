@@ -24,8 +24,9 @@ const steps = [
 
 export function HowItWorks() {
   return (
-    <section id="how-it-works" className="py-24 lg:py-32 relative">
-      <div className="absolute inset-0 bg-gradient-radial pointer-events-none" />
+    <section id="how-it-works" className="py-24 lg:py-32 relative overflow-hidden">
+      <div className="absolute inset-0 bg-aurora-green-center pointer-events-none" />
+      <div className="absolute top-0 right-0 w-[500px] h-[350px] bg-[radial-gradient(ellipse_at_100%_0%,hsla(168,60%,40%,0.12)_0%,transparent_50%)] pointer-events-none" />
       
       <div className="container mx-auto relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">

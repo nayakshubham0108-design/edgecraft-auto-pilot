@@ -65,9 +65,9 @@ const thirdColumn = testimonials.slice(6, 9);
 export function Testimonials() {
   return (
     <section className="py-24 lg:py-32 relative overflow-hidden">
-      {/* Green aurora background */}
-      <div className="absolute inset-0 bg-aurora-green pointer-events-none" />
-      <div className="absolute bottom-0 right-0 w-[500px] h-[350px] bg-[radial-gradient(ellipse_at_100%_100%,hsla(142,70%,40%,0.2)_0%,transparent_55%)] pointer-events-none" />
+      {/* Emerald aurora background */}
+      <div className="absolute inset-0 bg-aurora-green-top pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-[500px] h-[350px] bg-[radial-gradient(ellipse_at_0%_100%,hsla(158,65%,45%,0.16)_0%,transparent_55%)] pointer-events-none" />
 
       <div className="container mx-auto relative z-10">
         {/* Section Header */}
