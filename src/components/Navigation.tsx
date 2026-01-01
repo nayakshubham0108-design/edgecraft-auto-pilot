@@ -63,10 +63,7 @@ export function Navigation() {
             </div>
 
             {/* CTA */}
-            <div className="hidden md:flex items-center gap-4">
-              <Button variant="ghost" size="sm">
-                See Demo
-              </Button>
+            <div className="hidden md:flex items-center">
               <Button variant="hero" size="default">
                 Book Pilot
               </Button>
@@ -140,11 +137,8 @@ export function Navigation() {
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2, duration: 0.2 }}
-                className="flex flex-col gap-3 pt-4 mt-4 border-t border-border/30"
+                className="pt-4 mt-4 border-t border-border/30"
               >
-                <Button variant="outline" size="default" className="w-full rounded-xl">
-                  See Demo
-                </Button>
                 <Button variant="hero" size="default" className="w-full rounded-xl">
                   Book Pilot
                 </Button>

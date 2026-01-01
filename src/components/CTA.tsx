@@ -28,11 +28,8 @@ export function CTA() {
             {/* CTAs */}
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-10">
               <Button variant="hero" size="xl" className="w-full sm:w-auto group">
-                Get Started
+                Book a Discovery Call
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </Button>
-              <Button variant="glass" size="xl" className="w-full sm:w-auto">
-                Book a Demo
               </Button>
             </div>
 
