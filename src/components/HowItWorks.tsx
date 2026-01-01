@@ -33,10 +33,10 @@ export function HowItWorks() {
           <ScrollReveal>
             <div className="lg:sticky lg:top-32">
               <h2 className="font-bold text-3xl sm:text-4xl lg:text-5xl mb-6">
-                Deploy in <span className="text-gradient">Three Phases</span>
+                Here's How <span className="text-gradient">EdgeCraft AI</span> Works:
               </h2>
               <p className="text-lg text-muted-foreground max-w-md">
-                Audit → Pilot → Scale. We prove value before you commit.
+                Transform your business in three simple steps. We prove value before you commit.
               </p>
             </div>
           </ScrollReveal>
