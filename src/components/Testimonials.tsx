@@ -80,7 +80,7 @@ export function Testimonials() {
               </span>
             </div>
             <h2 className="font-bold text-3xl sm:text-4xl lg:text-5xl mb-6">
-              Teams Rely on Us to Move
+              Businesses Rely on Us to Move
               <br />
               <span className="text-gradient">Faster and Deliver More</span>
             </h2>
