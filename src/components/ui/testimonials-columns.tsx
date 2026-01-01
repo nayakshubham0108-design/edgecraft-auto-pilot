@@ -13,12 +13,16 @@ export const TestimonialsColumn = (props: {
   className?: string;
   testimonials: Testimonial[];
   duration?: number;
+  reverse?: boolean;
 }) => {
   return (
     <div className={props.className}>
       <motion.div
+        initial={{
+          translateY: props.reverse ? "-50%" : "0%",
+        }}
         animate={{
-          translateY: "-50%",
+          translateY: props.reverse ? "0%" : "-50%",
         }}
         transition={{
           duration: props.duration || 10,
