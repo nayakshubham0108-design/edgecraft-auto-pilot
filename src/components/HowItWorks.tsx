@@ -3,22 +3,22 @@ import { UniqueAccordion } from "@/components/ui/interactive-accordion";
 
 const steps = [
   {
-    id: "audit",
+    id: "discovery",
     number: "01",
-    title: "Audit",
-    content: "We capture baseline metrics and access points to understand your current operations and identify the highest-impact opportunities. Timeline: 3–5 days.",
+    title: "Book a Free Discovery Call",
+    content: "Schedule a consultation to discuss your business needs and goals with our AI experts. We capture baseline metrics and access points to understand your current operations and identify the highest-impact opportunities.",
   },
   {
-    id: "pilot",
+    id: "plan",
     number: "02",
-    title: "Pilot",
-    content: "We run a focused pilot on one channel and measure KPIs in real-time. You'll see results before committing to scale. Timeline: 7–21 days.",
+    title: "Get Your Custom AI Plan",
+    content: "Receive tailored recommendations for implementing AI solutions across your business.",
   },
   {
     id: "scale",
     number: "03",
-    title: "Scale",
-    content: "We broaden coverage, add automations, harden SLA, and optimize continuously based on performance data. This phase is ongoing.",
+    title: "Watch Your Business Scale",
+    content: "Experience transformative results as our AI-powered teams optimize your operations.",
   },
 ];
 
