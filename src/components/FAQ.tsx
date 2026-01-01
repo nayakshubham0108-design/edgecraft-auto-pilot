@@ -8,20 +8,24 @@ import { ScrollReveal } from "@/components/ScrollReveal";
 
 const faqs = [
   {
-    question: "What can this AI actually automate?",
-    answer: "Our AI handles the grunt work you shouldn't waste time on — data extraction, document analysis, summaries, reporting, workflow triggers, approvals, alerts, and repetitive admin tasks. If it's predictable and manual, the AI can automate it.",
+    question: "Is AI really reliable for customer-facing tasks?",
+    answer: "Yes. Our AI agents are trained to sound natural, respectful, and consistent. They don't take breaks, forget, or miss calls—giving your customers a professional experience 24/7.",
   },
   {
-    question: "How accurate is the data extraction and analysis?",
-    answer: "We achieve 98.9% transcription accuracy on calls and 99%+ on structured data extraction. Our models are fine-tuned for business contexts and continuously improve based on your specific use cases.",
+    question: "What if the AI makes mistakes?",
+    answer: "We design systems with human fallback. If AI can't resolve an issue, it hands off seamlessly to a real person — so customers are never left hanging.",
   },
   {
-    question: "Will it work with the tools my team already uses?",
-    answer: "Yes — we integrate with HubSpot, Zoho, Salesforce, Google Workspace, Slack, and 2,000+ other apps via native integrations and webhooks. If you have a custom system, we can build API connections.",
+    question: "Do I need to change my whole business to use this?",
+    answer: "Not at all. We plug into the tools you already use (CRM, phone, email, website) and automate workflows step by step.",
   },
   {
-    question: "Is it suitable for small teams or startups?",
-    answer: "Absolutely. Our pilot programs are designed to prove ROI fast with minimal commitment. Many of our best results come from lean teams who needed to scale operations without hiring.",
+    question: "What if I'm not tech-savvy?",
+    answer: "No problem. We handle setup, training, and support. You don't need technical skills — you just see the results.",
+  },
+  {
+    question: "How do I know this will actually work for my industry?",
+    answer: "Every industry has repetitive tasks. Whether it's leads, calls, support, or scheduling — AI takes care of the busywork. We tailor it to your business.",
   },
   {
     question: "How secure is my data?",
