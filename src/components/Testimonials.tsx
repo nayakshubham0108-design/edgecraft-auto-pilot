@@ -1,154 +1,110 @@
-import { useState } from "react";
-import { ChevronLeft, ChevronRight, Star } from "lucide-react";
+import { TestimonialsColumn } from "@/components/ui/testimonials-columns";
 import { ScrollReveal } from "@/components/ScrollReveal";
 
 const testimonials = [
   {
-    rating: 5,
-    title: "Completely transformed our workflow",
     text: "What used to take our team hours now takes seconds. The automation features didn't just speed us up — they completely changed how we work.",
-    author: "Sarah Mitchell",
+    image: "https://randomuser.me/api/portraits/women/1.jpg",
+    name: "Sarah Mitchell",
     role: "Operations Director",
-    company: "Dental Care Plus",
   },
   {
-    rating: 5,
-    title: "Finally, AI that delivers",
     text: "For the first time, someone without a data background can understand our reports. Clean summaries, accurate insights, and no manual formatting needed.",
-    author: "Michael Chen",
+    image: "https://randomuser.me/api/portraits/men/2.jpg",
+    name: "Michael Chen",
     role: "Practice Manager",
-    company: "Bright Smile Clinic",
   },
   {
-    rating: 5,
-    title: "ROI in the first month",
-    text: "We replaced multiple disconnected processes with one streamlined system. Errors dropped automatically, and we can finally focus on growing the business.",
-    author: "Jennifer Torres",
+    text: "We replaced multiple disconnected processes with one streamlined system. Errors dropped automatically, and we can finally focus on growth.",
+    image: "https://randomuser.me/api/portraits/women/3.jpg",
+    name: "Jennifer Torres",
     role: "Clinic Owner",
-    company: "Torres Medical Group",
   },
   {
-    rating: 5,
-    title: "Game changer for after-hours",
     text: "EdgeCraft fixed our nights — booked 7 appointments the first weekend. Our competitors are still sending calls to voicemail.",
-    author: "David Park",
+    image: "https://randomuser.me/api/portraits/men/4.jpg",
+    name: "David Park",
     role: "Office Manager",
-    company: "Park Family Dental",
+  },
+  {
+    text: "The AI-powered insights have transformed our decision-making process. We're now ahead of trends instead of reacting to them.",
+    image: "https://randomuser.me/api/portraits/women/5.jpg",
+    name: "Emily Rodriguez",
+    role: "Strategy Director",
+  },
+  {
+    text: "Integration was seamless. Within a week, our entire team was up and running with zero downtime.",
+    image: "https://randomuser.me/api/portraits/men/6.jpg",
+    name: "James Wilson",
+    role: "IT Manager",
+  },
+  {
+    text: "Our customer response time dropped by 80%. The automation handles routine queries while we focus on complex cases.",
+    image: "https://randomuser.me/api/portraits/women/7.jpg",
+    name: "Lisa Thompson",
+    role: "Customer Success Lead",
+  },
+  {
+    text: "The ROI was visible within the first month. Best investment we've made in operational efficiency.",
+    image: "https://randomuser.me/api/portraits/men/8.jpg",
+    name: "Robert Kim",
+    role: "CFO",
+  },
+  {
+    text: "Finally, a solution that actually understands healthcare workflows. It's like it was built specifically for us.",
+    image: "https://randomuser.me/api/portraits/women/9.jpg",
+    name: "Amanda Foster",
+    role: "Healthcare Administrator",
   },
 ];
 
+const firstColumn = testimonials.slice(0, 3);
+const secondColumn = testimonials.slice(3, 6);
+const thirdColumn = testimonials.slice(6, 9);
+
 export function Testimonials() {
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  const next = () => {
-    setCurrentIndex((prev) => (prev + 1) % testimonials.length);
-  };
-
-  const prev = () => {
-    setCurrentIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
-  };
-
-  const visibleTestimonials = [
-    testimonials[currentIndex],
-    testimonials[(currentIndex + 1) % testimonials.length],
-    testimonials[(currentIndex + 2) % testimonials.length],
-  ];
-
   return (
     <section className="py-24 lg:py-32 relative overflow-hidden">
       {/* Green aurora background */}
       <div className="absolute inset-0 bg-aurora-green pointer-events-none" />
       <div className="absolute bottom-0 right-0 w-[500px] h-[350px] bg-[radial-gradient(ellipse_at_100%_100%,hsla(142,70%,40%,0.2)_0%,transparent_55%)] pointer-events-none" />
-      
+
       <div className="container mx-auto relative z-10">
         {/* Section Header */}
         <ScrollReveal>
           <div className="text-center max-w-3xl mx-auto mb-16">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 mb-6">
+              <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+              <span className="text-sm font-medium text-primary">
+                Testimonials
+              </span>
+            </div>
             <h2 className="font-bold text-3xl sm:text-4xl lg:text-5xl mb-6">
-              Teams Rely on Us to Move<br />
+              Teams Rely on Us to Move
+              <br />
               <span className="text-gradient">Faster and Deliver More</span>
             </h2>
             <p className="text-lg text-muted-foreground">
-              Real results from real businesses using AI to eliminate grunt work and unlock serious efficiency.
+              Real results from real businesses using AI to eliminate grunt work
+              and unlock serious efficiency.
             </p>
           </div>
         </ScrollReveal>
 
-        {/* Testimonials Container */}
-        <ScrollReveal delay={200}>
-          <div className="flex flex-col lg:flex-row gap-8 items-start">
-            {/* Rating Summary */}
-            <div className="lg:w-1/4 flex lg:flex-col items-center lg:items-start gap-4">
-              <div className="flex items-baseline gap-2">
-                <span className="font-extrabold text-5xl lg:text-6xl text-primary">4.9</span>
-                <span className="text-2xl text-muted-foreground">/5</span>
-              </div>
-              <div className="flex items-center gap-1 mb-2">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-5 h-5 fill-primary text-primary" />
-                ))}
-              </div>
-              <p className="text-sm text-muted-foreground">Based on 240+ reviews</p>
-
-              {/* Navigation */}
-              <div className="flex items-center gap-2 mt-4">
-                <button
-                  onClick={prev}
-                  className="w-10 h-10 rounded-full glass-card flex items-center justify-center hover:border-primary/50 transition-colors"
-                >
-                  <ChevronLeft className="w-5 h-5 text-foreground" />
-                </button>
-                <button
-                  onClick={next}
-                  className="w-10 h-10 rounded-full glass-card flex items-center justify-center hover:border-primary/50 transition-colors"
-                >
-                  <ChevronRight className="w-5 h-5 text-foreground" />
-                </button>
-              </div>
-            </div>
-
-            {/* Testimonial Cards */}
-            <div className="lg:w-3/4 grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {visibleTestimonials.map((testimonial, index) => (
-                <div
-                  key={`${testimonial.author}-${index}`}
-                  className="glass-card rounded-2xl p-6 hover:border-primary/30 transition-all duration-500"
-                >
-                  {/* Stars */}
-                  <div className="flex items-center gap-1 mb-4">
-                    <span className="text-sm font-medium text-foreground mr-2">{testimonial.rating}.0</span>
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="w-4 h-4 fill-primary text-primary" />
-                    ))}
-                  </div>
-
-                  {/* Title */}
-                  <h4 className="font-semibold text-lg text-foreground mb-3">
-                    {testimonial.title}
-                  </h4>
-
-                  {/* Quote */}
-                  <p className="text-muted-foreground text-sm leading-relaxed mb-6">
-                    "{testimonial.text}"
-                  </p>
-
-                  {/* Author */}
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center">
-                      <span className="text-sm font-semibold text-primary">
-                        {testimonial.author.split(" ").map(n => n[0]).join("")}
-                      </span>
-                    </div>
-                    <div>
-                      <p className="text-sm font-medium text-foreground">{testimonial.author}</p>
-                      <p className="text-xs text-muted-foreground">{testimonial.role}</p>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </ScrollReveal>
+        {/* Testimonials Columns */}
+        <div className="flex justify-center gap-6 [mask-image:linear-gradient(to_bottom,transparent,black_25%,black_75%,transparent)] max-h-[600px] overflow-hidden">
+          <TestimonialsColumn testimonials={firstColumn} duration={15} />
+          <TestimonialsColumn
+            testimonials={secondColumn}
+            className="hidden md:block"
+            duration={19}
+          />
+          <TestimonialsColumn
+            testimonials={thirdColumn}
+            className="hidden lg:block"
+            duration={17}
+          />
+        </div>
       </div>
     </section>
   );
