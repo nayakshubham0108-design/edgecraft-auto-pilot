@@ -35,7 +35,11 @@ export function Navigation() {
                 <a
                   key={link.label}
                   href={link.href}
-                  className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-200"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    document.querySelector(link.href)?.scrollIntoView({ behavior: "smooth" });
+                  }}
+                  className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-200 cursor-pointer"
                 >
                   {link.label}
                 </a>
@@ -106,7 +110,11 @@ export function Navigation() {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: index * 0.05, duration: 0.2 }}
                     className="text-base font-medium text-muted-foreground hover:text-foreground hover:bg-white/5 transition-all px-4 py-3 rounded-xl"
-                    onClick={() => setIsOpen(false)}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      setIsOpen(false);
+                      document.querySelector(link.href)?.scrollIntoView({ behavior: "smooth" });
+                    }}
                   >
                     {link.label}
                   </motion.a>
