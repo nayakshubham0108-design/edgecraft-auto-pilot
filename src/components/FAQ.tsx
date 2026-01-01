@@ -31,8 +31,10 @@ const faqs = [
 
 export function FAQ() {
   return (
-    <section id="faq" className="py-24 lg:py-32 relative">
-      <div className="container mx-auto">
+    <section id="faq" className="py-24 lg:py-32 relative overflow-hidden">
+      <div className="absolute inset-0 bg-aurora-green-center pointer-events-none" />
+      <div className="absolute top-0 left-0 w-[400px] h-[300px] bg-[radial-gradient(ellipse_at_0%_0%,hsla(168,60%,40%,0.1)_0%,transparent_50%)] pointer-events-none" />
+      <div className="container mx-auto relative z-10">
         {/* Section Header */}
         <ScrollReveal>
           <div className="text-center max-w-3xl mx-auto mb-16">

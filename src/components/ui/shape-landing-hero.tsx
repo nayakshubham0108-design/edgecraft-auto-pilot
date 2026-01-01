@@ -46,10 +46,10 @@ function ElegantShape({
             "absolute inset-0 rounded-full",
             "bg-gradient-to-r to-transparent",
             gradient,
-            "backdrop-blur-[2px] border border-primary/[0.15]",
-            "shadow-[0_8px_32px_0_hsla(142,70%,45%,0.2)]",
+            "backdrop-blur-[2px] border border-primary/[0.12]",
+            "shadow-[0_8px_32px_0_hsla(158,65%,50%,0.18)]",
             "after:absolute after:inset-0 after:rounded-full",
-            "after:bg-[radial-gradient(circle_at_50%_50%,hsla(142,70%,45%,0.2),transparent_70%)]"
+            "after:bg-[radial-gradient(circle_at_50%_50%,hsla(158,65%,50%,0.18),transparent_70%)]"
           )}
         />
       </motion.div>

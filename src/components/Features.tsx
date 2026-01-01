@@ -45,8 +45,8 @@ const features = [
 export function Features() {
   return (
     <section id="services" className="py-24 lg:py-32 relative overflow-hidden">
-      <div className="absolute inset-0 bg-aurora-green-center pointer-events-none" />
-      <div className="absolute bottom-0 right-0 w-[600px] h-[400px] bg-[radial-gradient(ellipse_at_100%_100%,hsla(142,70%,40%,0.25)_0%,transparent_55%)] pointer-events-none" />
+      <div className="absolute inset-0 bg-aurora-green-top pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-[600px] h-[400px] bg-[radial-gradient(ellipse_at_0%_100%,hsla(158,65%,45%,0.18)_0%,transparent_55%)] pointer-events-none" />
       
       <div className="container mx-auto relative z-10">
         {/* Section Header */}
@@ -67,10 +67,10 @@ export function Features() {
           {features.map((feature, index) => (
             <ScrollReveal key={feature.title} delay={index * 100}>
               <TiltCard className="h-full">
-                <SpotlightCard className="h-full" spotlightColor="rgba(74, 222, 128, 0.2)">
-                  <div className="group glass-card rounded-2xl p-6 lg:p-8 hover:border-[hsla(142,70%,45%,0.35)] transition-all duration-300 hover:shadow-[0_0_40px_hsla(142,70%,45%,0.25)] h-full">
+                <SpotlightCard className="h-full" spotlightColor="hsla(158, 65%, 52%, 0.15)">
+                  <div className="group glass-card rounded-2xl p-6 lg:p-8 hover:border-primary/30 transition-all duration-300 hover:shadow-[0_0_40px_hsla(158,65%,50%,0.2)] h-full">
                     {/* Icon */}
-                    <div className="w-12 h-12 rounded-xl bg-[hsla(142,70%,45%,0.15)] flex items-center justify-center mb-6 group-hover:bg-[hsla(142,70%,45%,0.25)] group-hover:shadow-[0_0_20px_hsla(142,70%,50%,0.4)] transition-all duration-300">
+                    <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary/20 group-hover:shadow-[0_0_20px_hsla(158,65%,50%,0.35)] transition-all duration-300">
                       <feature.icon className="w-6 h-6 text-primary group-hover:icon-glow transition-all" />
                     </div>
 

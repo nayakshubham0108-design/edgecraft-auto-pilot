@@ -32,10 +32,10 @@ export function Hero() {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background">
-      {/* Green aurora gradient background */}
+      {/* Emerald aurora gradient background */}
       <div className="absolute inset-0 bg-aurora-green" />
-      <div className="absolute bottom-0 right-0 w-[800px] h-[500px] bg-[radial-gradient(ellipse_at_100%_100%,hsla(142,70%,40%,0.3)_0%,transparent_60%)]" />
-      <div className="absolute top-0 left-1/4 w-[400px] h-[300px] bg-[radial-gradient(ellipse_at_50%_0%,hsla(142,70%,45%,0.1)_0%,transparent_50%)]" />
+      <div className="absolute bottom-0 right-0 w-[800px] h-[500px] bg-[radial-gradient(ellipse_at_100%_100%,hsla(158,65%,45%,0.25)_0%,transparent_60%)]" />
+      <div className="absolute top-0 left-1/4 w-[400px] h-[300px] bg-[radial-gradient(ellipse_at_50%_0%,hsla(168,60%,40%,0.08)_0%,transparent_50%)]" />
       
       {/* Animated geometric shapes */}
       <HeroShapesBackground />
