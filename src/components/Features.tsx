@@ -1,44 +1,69 @@
-import { Phone, MessageSquare, Mail, Globe, Cpu, Workflow, ArrowRight } from "lucide-react";
+import { Phone, Link2, Mail, Globe, Cpu } from "lucide-react";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { TiltCard } from "@/components/ui/tilt-card";
 import { SpotlightCard } from "@/components/ui/spotlight-card";
+import { Button } from "@/components/ui/button";
 
 const features = [
   {
     icon: Phone,
-    title: "AI Voice Agents",
-    description: "24/7 call handling that answers, qualifies, and books appointments while you sleep.",
-    cta: "Start After-Hours Pilot",
+    title: "AI Phone Callers",
+    description: "Human-like agents that answer, engage, and convert — day or night.",
+    bullets: [
+      "24/7 availability",
+      "Handles unlimited calls",
+      "Polite, professional tone",
+      "No missed opportunities",
+      "Updates CRM automatically",
+    ],
   },
   {
-    icon: MessageSquare,
-    title: "Intelligent Chatbots",
-    description: "RAG-powered bots on web, WhatsApp, and SMS that capture leads and generate proposals.",
-    cta: "Deploy LeadMate Widget",
-  },
-  {
-    icon: Mail,
-    title: "Email Automation",
-    description: "Behavior-driven sequences with LLM personalization that re-activate lists and speed demos.",
-    cta: "Launch Email Flow",
+    icon: Link2,
+    title: "AI That Never Misses a Lead",
+    description: "Capture every lead and nurture automatically with smart follow-ups.",
+    bullets: [
+      "Smart capture (forms & calls)",
+      "Instant qualification",
+      "Automated reminders",
+      "Never lose a lead",
+      "Higher conversion rates",
+    ],
   },
   {
     icon: Globe,
-    title: "Conversion Websites",
-    description: "Product-led pages with calculators, chat entry points, and analytics that feed your bots.",
-    cta: "Build My Funnel",
+    title: "Website that converts",
+    description: "Modern, conversion-focused websites built fast with AI assistance.",
+    bullets: [
+      "Custom responsive design",
+      "Speed & SEO optimized",
+      "Booking & payments",
+      "Smart lead forms",
+      "Easy updates",
+    ],
+  },
+  {
+    icon: Mail,
+    title: "Emails That Reach Thousands Instantly",
+    description: "Send thousands of personalized emails daily, hands-free.",
+    bullets: [
+      "Targeted lists",
+      "Smart personalization",
+      "Automated follow-ups",
+      "Scalable campaigns",
+      "Real-time analytics",
+    ],
   },
   {
     icon: Cpu,
-    title: "Custom AI SaaS",
-    description: "Turn repetitive work into a product — internal dashboards or customer-facing tools.",
-    cta: "Schedule Discovery",
-  },
-  {
-    icon: Workflow,
-    title: "Process Automation",
-    description: "Chain telephony, chat, CRM, calendar, and billing into orchestrated flows.",
-    cta: "Automate My Flow",
+    title: "Custom AI-Powered Software",
+    description: "AI tools built around your exact workflows and goals.",
+    bullets: [
+      "Tailored automation software",
+      "Integrates with your stack",
+      "Scales as you grow",
+      "Efficiency gains fast",
+      "Future-proof tech",
+    ],
   },
 ];
 
@@ -68,28 +93,37 @@ export function Features() {
             <ScrollReveal key={feature.title} delay={index * 100}>
               <TiltCard className="h-full">
                 <SpotlightCard className="h-full" spotlightColor="hsla(158, 65%, 52%, 0.15)">
-                  <div className="group glass-card rounded-2xl p-6 lg:p-8 hover:border-primary/30 transition-all duration-300 hover:shadow-[0_0_40px_hsla(158,65%,50%,0.2)] h-full">
+                  <div className="group glass-card rounded-2xl p-6 lg:p-8 hover:border-primary/30 transition-all duration-300 hover:shadow-[0_0_40px_hsla(158,65%,50%,0.2)] h-full flex flex-col">
                     {/* Icon */}
-                    <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary/20 group-hover:shadow-[0_0_20px_hsla(158,65%,50%,0.35)] transition-all duration-300">
-                      <feature.icon className="w-6 h-6 text-primary group-hover:icon-glow transition-all" />
+                    <div className="w-14 h-14 rounded-xl border border-primary/30 bg-background/50 flex items-center justify-center mb-6 group-hover:border-primary/50 group-hover:shadow-[0_0_20px_hsla(158,65%,50%,0.25)] transition-all duration-300">
+                      <feature.icon className="w-6 h-6 text-primary/80 group-hover:text-primary transition-all" />
                     </div>
 
                     {/* Content */}
-                    <h3 className="font-semibold text-xl mb-3 text-foreground group-hover:text-primary transition-colors">
+                    <h3 className="font-bold text-xl lg:text-2xl mb-3 text-foreground">
                       {feature.title}
                     </h3>
                     <p className="text-muted-foreground mb-6 leading-relaxed">
                       {feature.description}
                     </p>
 
-                    {/* CTA Link */}
-                    <a
-                      href="#"
-                      className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:gap-3 transition-all"
+                    {/* Bullet Points */}
+                    <ul className="space-y-3 mb-8 flex-grow">
+                      {feature.bullets.map((bullet, i) => (
+                        <li key={i} className="flex items-start gap-3 text-muted-foreground">
+                          <span className="w-2 h-2 rounded-full bg-primary/60 mt-2 flex-shrink-0" />
+                          <span>{bullet}</span>
+                        </li>
+                      ))}
+                    </ul>
+
+                    {/* CTA Button */}
+                    <Button
+                      variant="outline"
+                      className="w-full mt-auto border-primary/40 bg-transparent text-foreground hover:bg-primary/10 hover:border-primary/60 hover:shadow-[0_0_20px_hsla(158,65%,50%,0.3)] transition-all duration-300"
                     >
-                      {feature.cta}
-                      <ArrowRight className="w-4 h-4" />
-                    </a>
+                      Learn more
+                    </Button>
                   </div>
                 </SpotlightCard>
               </TiltCard>
