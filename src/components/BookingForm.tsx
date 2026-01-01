@@ -125,13 +125,13 @@ export const BookingForm = () => {
           <div className="text-center mb-12">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card mb-6">
               <Calendar className="w-4 h-4 text-primary" />
-              <span className="text-sm text-muted-foreground">Book Your Pilot</span>
+              <span className="text-sm text-muted-foreground">Step 1 Starts Here</span>
             </div>
             <h2 className="text-3xl md:text-5xl font-bold mb-4">
-              Schedule Your <span className="text-gradient">7-Day Pilot</span>
+              Ready to <span className="text-gradient">Get Started?</span>
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Pick a time that works for you. We'll audit your current setup and show you exactly how much revenue you're leaving on the table.
+              Book your free discovery call now. We'll discuss your goals, audit your current setup, and create your custom AI plan.
             </p>
           </div>
         </ScrollReveal>
