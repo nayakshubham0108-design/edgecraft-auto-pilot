@@ -320,7 +320,7 @@ export const BookingForm = () => {
                     ) : (
                       <span className="flex items-center gap-2">
                         <Send className="w-4 h-4" />
-                        Book My 7-Day Pilot
+                        Book a Free Discovery Call
                       </span>
                     )}
                   </Button>
