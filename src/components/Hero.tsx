@@ -42,10 +42,13 @@ export function Hero() {
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-5xl mx-auto text-center">
-          {/* Brand label */}
-          <p className="text-sm tracking-[0.3em] uppercase text-primary font-semibold mb-8">
-            EdgeCrafts
-          </p>
+          {/* Brand label pill */}
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-primary/10 backdrop-blur-sm mb-8">
+            <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+            <span className="text-sm tracking-[0.2em] uppercase text-primary font-medium">
+              EdgeCrafts
+            </span>
+          </div>
 
           {/* Main headline */}
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.1] tracking-[-0.02em] mb-12 text-foreground animate-text-glow">
