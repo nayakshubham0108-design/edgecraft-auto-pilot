@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Zap } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -12,11 +12,27 @@ const navLinks = [
 
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <nav className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[90%] max-w-4xl">
       {/* Main nav bar */}
-      <div className="glass-card rounded-full border border-border/30 shadow-lg shadow-primary/15 px-4">
+      <motion.div 
+        className="rounded-full border border-border/30 shadow-lg shadow-primary/15 px-4 transition-all duration-300"
+        animate={{
+          backgroundColor: scrolled ? "hsla(160, 20%, 8%, 0.95)" : "hsla(160, 20%, 8%, 0.6)",
+          backdropFilter: scrolled ? "blur(20px)" : "blur(12px)",
+        }}
+        style={{ backdropFilter: "blur(12px)" }}
+      >
         <div className="mx-auto">
           <div className="flex items-center justify-between h-12 md:h-14">
             {/* Logo */}
@@ -88,7 +104,7 @@ export function Navigation() {
             </motion.button>
           </div>
         </div>
-      </div>
+      </motion.div>
 
       {/* Mobile Menu - Separate dropdown */}
       <AnimatePresence>
