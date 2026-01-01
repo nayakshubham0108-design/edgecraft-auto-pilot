@@ -33,6 +33,12 @@ export function HowItWorks() {
           {/* Left side - Header */}
           <ScrollReveal>
             <div className="lg:sticky lg:top-32">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-primary/10 backdrop-blur-sm mb-6">
+                <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+                <span className="text-sm tracking-[0.2em] uppercase text-primary font-medium">
+                  How It Works
+                </span>
+              </div>
               <h2 className="font-bold text-3xl sm:text-4xl lg:text-5xl mb-6">
                 Here's How <span className="text-gradient">EdgeCraft AI</span> Works:
               </h2>
