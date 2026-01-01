@@ -89,6 +89,12 @@ export function Features() {
         {/* Section Header */}
         <ScrollReveal>
           <div className="text-center max-w-3xl mx-auto mb-16">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-primary/10 backdrop-blur-sm mb-6">
+              <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+              <span className="text-sm tracking-[0.2em] uppercase text-primary font-medium">
+                Services
+              </span>
+            </div>
             <h2 className="font-bold text-3xl sm:text-4xl lg:text-5xl mb-6">
               The Automation Layer Behind<br />
               <span className="text-gradient">High-Performing Businesses</span>
