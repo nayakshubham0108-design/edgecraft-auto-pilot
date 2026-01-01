@@ -1,4 +1,4 @@
-import { Phone, Link2, Mail, Globe, Cpu } from "lucide-react";
+import { Phone, MessageSquare, Link2, Mail, Globe, Cpu } from "lucide-react";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { TiltCard } from "@/components/ui/tilt-card";
 import { SpotlightCard } from "@/components/ui/spotlight-card";
@@ -15,6 +15,18 @@ const features = [
       "Polite, professional tone",
       "No missed opportunities",
       "Updates CRM automatically",
+    ],
+  },
+  {
+    icon: MessageSquare,
+    title: "Intelligent Chatbots",
+    description: "RAG-powered bots on web, WhatsApp, and SMS that never sleep.",
+    bullets: [
+      "Website & WhatsApp ready",
+      "Answers FAQs instantly",
+      "Captures leads 24/7",
+      "Generates proposals",
+      "Seamless handoff to humans",
     ],
   },
   {
