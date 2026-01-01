@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
+import { SpotlightCard } from "@/components/ui/spotlight-card";
 
 interface Testimonial {
   text: string;
@@ -36,27 +37,29 @@ export const TestimonialsColumn = (props: {
           ...new Array(2).fill(0).map((_, index) => (
             <React.Fragment key={index}>
               {props.testimonials.map(({ text, image, name, role }, i) => (
-                <div
+                <SpotlightCard
                   key={`${name}-${i}`}
-                  className="glass-card rounded-2xl p-6 border border-border/50 hover:border-primary/30 transition-all duration-300"
+                  spotlightColor="rgba(74, 222, 128, 0.15)"
                 >
-                  <p className="text-muted-foreground text-sm leading-relaxed mb-6">
-                    "{text}"
-                  </p>
-                  <div className="flex items-center gap-3">
-                    <img
-                      src={image}
-                      alt={name}
-                      className="h-10 w-10 rounded-full object-cover"
-                    />
-                    <div>
-                      <p className="text-sm font-medium text-foreground">
-                        {name}
+                  <div className="glass-card rounded-2xl p-6 border border-border/50 hover:border-primary/30 transition-all duration-300">
+                    <p className="text-muted-foreground text-sm leading-relaxed mb-6">
+                      "{text}"
+                    </p>
+                    <div className="flex items-center gap-3">
+                      <img
+                        src={image}
+                        alt={name}
+                        className="h-10 w-10 rounded-full object-cover"
+                      />
+                      <div>
+                        <p className="text-sm font-medium text-foreground">
+                          {name}
                       </p>
-                      <p className="text-xs text-muted-foreground">{role}</p>
+                        <p className="text-xs text-muted-foreground">{role}</p>
+                      </div>
                     </div>
                   </div>
-                </div>
+                </SpotlightCard>
               ))}
             </React.Fragment>
           )),

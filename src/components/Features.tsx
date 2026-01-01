@@ -1,6 +1,7 @@
 import { Phone, MessageSquare, Mail, Globe, Cpu, Workflow, ArrowRight } from "lucide-react";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { TiltCard } from "@/components/ui/tilt-card";
+import { SpotlightCard } from "@/components/ui/spotlight-card";
 
 const features = [
   {
@@ -66,29 +67,31 @@ export function Features() {
           {features.map((feature, index) => (
             <ScrollReveal key={feature.title} delay={index * 100}>
               <TiltCard className="h-full">
-                <div className="group glass-card rounded-2xl p-6 lg:p-8 hover:border-[hsla(142,70%,45%,0.35)] transition-all duration-300 hover:shadow-[0_0_40px_hsla(142,70%,45%,0.25)] h-full">
-                  {/* Icon */}
-                  <div className="w-12 h-12 rounded-xl bg-[hsla(142,70%,45%,0.15)] flex items-center justify-center mb-6 group-hover:bg-[hsla(142,70%,45%,0.25)] group-hover:shadow-[0_0_20px_hsla(142,70%,50%,0.4)] transition-all duration-300">
-                    <feature.icon className="w-6 h-6 text-primary group-hover:icon-glow transition-all" />
+                <SpotlightCard className="h-full" spotlightColor="rgba(74, 222, 128, 0.2)">
+                  <div className="group glass-card rounded-2xl p-6 lg:p-8 hover:border-[hsla(142,70%,45%,0.35)] transition-all duration-300 hover:shadow-[0_0_40px_hsla(142,70%,45%,0.25)] h-full">
+                    {/* Icon */}
+                    <div className="w-12 h-12 rounded-xl bg-[hsla(142,70%,45%,0.15)] flex items-center justify-center mb-6 group-hover:bg-[hsla(142,70%,45%,0.25)] group-hover:shadow-[0_0_20px_hsla(142,70%,50%,0.4)] transition-all duration-300">
+                      <feature.icon className="w-6 h-6 text-primary group-hover:icon-glow transition-all" />
+                    </div>
+
+                    {/* Content */}
+                    <h3 className="font-semibold text-xl mb-3 text-foreground group-hover:text-primary transition-colors">
+                      {feature.title}
+                    </h3>
+                    <p className="text-muted-foreground mb-6 leading-relaxed">
+                      {feature.description}
+                    </p>
+
+                    {/* CTA Link */}
+                    <a
+                      href="#"
+                      className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:gap-3 transition-all"
+                    >
+                      {feature.cta}
+                      <ArrowRight className="w-4 h-4" />
+                    </a>
                   </div>
-
-                  {/* Content */}
-                  <h3 className="font-semibold text-xl mb-3 text-foreground group-hover:text-primary transition-colors">
-                    {feature.title}
-                  </h3>
-                  <p className="text-muted-foreground mb-6 leading-relaxed">
-                    {feature.description}
-                  </p>
-
-                  {/* CTA Link */}
-                  <a
-                    href="#"
-                    className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:gap-3 transition-all"
-                  >
-                    {feature.cta}
-                    <ArrowRight className="w-4 h-4" />
-                  </a>
-                </div>
+                </SpotlightCard>
               </TiltCard>
             </ScrollReveal>
           ))}
