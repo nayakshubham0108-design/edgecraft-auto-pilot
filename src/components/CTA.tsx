@@ -31,7 +31,7 @@ export function CTA() {
                 variant="hero" 
                 size="xl" 
                 className="w-full sm:w-auto group"
-                onClick={() => (window as any).Calendly?.initPopupWidget({url: 'https://calendly.com/nayakshubham0108?background_color=0c0c0c&text_color=24e32c&primary_color=00ff6c'})}
+                onClick={() => document.querySelector('#book-pilot')?.scrollIntoView({ behavior: 'smooth' })}
               >
                 Book a Discovery Call
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
