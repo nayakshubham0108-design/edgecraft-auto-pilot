@@ -64,7 +64,11 @@ export function Navigation() {
 
             {/* CTA */}
             <div className="hidden md:flex items-center">
-              <Button variant="hero" size="default">
+              <Button 
+                variant="hero" 
+                size="default"
+                onClick={() => (window as any).Calendly?.initPopupWidget({url: 'https://calendly.com/nayakshubham0108?background_color=0c0c0c&text_color=24e32c&primary_color=00ff6c'})}
+              >
                 Book a Discovery Call
               </Button>
             </div>
@@ -139,7 +143,15 @@ export function Navigation() {
                 transition={{ delay: 0.2, duration: 0.2 }}
                 className="pt-4 mt-4 border-t border-border/30"
               >
-                <Button variant="hero" size="default" className="w-full rounded-xl">
+                <Button 
+                  variant="hero" 
+                  size="default" 
+                  className="w-full rounded-xl"
+                  onClick={() => {
+                    setIsOpen(false);
+                    (window as any).Calendly?.initPopupWidget({url: 'https://calendly.com/nayakshubham0108?background_color=0c0c0c&text_color=24e32c&primary_color=00ff6c'});
+                  }}
+                >
                   Book a Discovery Call
                 </Button>
               </motion.div>
