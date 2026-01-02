@@ -75,6 +75,7 @@ export function Hero() {
             variant="hero"
             size="lg"
             className="min-w-[220px] group text-base py-6 animate-glow-breathe"
+            onClick={() => (window as any).Calendly?.initPopupWidget({url: 'https://calendly.com/nayakshubham0108?background_color=0c0c0c&text_color=24e32c&primary_color=00ff6c'})}
           >
             Book discovery call
             <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
