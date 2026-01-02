@@ -27,7 +27,12 @@ export function CTA() {
 
             {/* CTAs */}
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-10">
-              <Button variant="hero" size="xl" className="w-full sm:w-auto group">
+              <Button 
+                variant="hero" 
+                size="xl" 
+                className="w-full sm:w-auto group"
+                onClick={() => (window as any).Calendly?.initPopupWidget({url: 'https://calendly.com/nayakshubham0108?background_color=0c0c0c&text_color=24e32c&primary_color=00ff6c'})}
+              >
                 Book a Discovery Call
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Button>
