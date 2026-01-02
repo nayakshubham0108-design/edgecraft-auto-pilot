@@ -36,21 +36,10 @@ export const BookingForm = () => {
 
     setIsSubmitting(true);
     
-    // Open Calendly with pre-filled info including custom questions
-    const calendlyUrl = `https://calendly.com/nayakshubham0108?background_color=0c0c0c&text_color=24e32c&primary_color=00ff6c`;
+    // Open Calendly with pre-filled info
+    const calendlyUrl = `https://calendly.com/nayakshubham0108?background_color=0c0c0c&text_color=24e32c&primary_color=00ff6c&name=${encodeURIComponent(formData.name)}&email=${encodeURIComponent(formData.email)}`;
     
-    (window as any).Calendly?.initPopupWidget({ 
-      url: calendlyUrl,
-      prefill: {
-        name: formData.name,
-        email: formData.email,
-        customAnswers: {
-          a1: formData.phone,
-          a2: formData.company,
-          a3: formData.message
-        }
-      }
-    });
+    (window as any).Calendly?.initPopupWidget({ url: calendlyUrl });
     
     setIsSubmitting(false);
   };
