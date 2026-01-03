@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Star } from "lucide-react";
 import { ScrollReveal } from "@/components/ScrollReveal";
-
+import { openCalendly } from "@/lib/calendly";
 export function CTA() {
   return (
     <section className="py-24 lg:py-32 relative overflow-hidden">
@@ -31,7 +31,7 @@ export function CTA() {
                 variant="hero" 
                 size="xl" 
                 className="w-full sm:w-auto group"
-                onClick={() => document.querySelector('#book-pilot')?.scrollIntoView({ behavior: 'smooth' })}
+                onClick={openCalendly}
               >
                 Book a Discovery Call
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
