@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Zap } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { openCalendly } from "@/lib/calendly";
 
 const navLinks = [
   { label: "Services", href: "#services" },
@@ -67,7 +68,7 @@ export function Navigation() {
               <Button 
                 variant="hero" 
                 size="default"
-                onClick={() => document.querySelector('#book-pilot')?.scrollIntoView({ behavior: 'smooth' })}
+                onClick={openCalendly}
               >
                 Book a Discovery Call
               </Button>
@@ -149,7 +150,7 @@ export function Navigation() {
                   className="w-full rounded-xl"
                   onClick={() => {
                     setIsOpen(false);
-                    document.querySelector('#book-pilot')?.scrollIntoView({ behavior: 'smooth' });
+                    openCalendly();
                   }}
                 >
                   Book a Discovery Call

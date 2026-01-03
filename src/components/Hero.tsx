@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { useState, useEffect } from "react";
 import { HeroShapesBackground } from "@/components/ui/shape-landing-hero";
-
+import { openCalendly } from "@/lib/calendly";
 const cyclingTexts = [
   "Redesign your website with AI-driven conversion focus",
   "Custom AI software tailored to your business workflows",
@@ -75,7 +75,7 @@ export function Hero() {
             variant="hero"
             size="lg"
             className="min-w-[220px] group text-base py-6 animate-glow-breathe"
-            onClick={() => document.querySelector('#book-pilot')?.scrollIntoView({ behavior: 'smooth' })}
+            onClick={openCalendly}
           >
             Book discovery call
             <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
